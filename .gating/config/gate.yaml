@@ -1,0 +1,13 @@
+gate:
+  package: gating/gate
+  dot_folder: .gating
+  mode: read_only
+  mutation_default: forbidden
+  default_rules:
+    - structure.forbidden_architecture
+    - namespace.profile_match
+    - layer.typed_class_location
+    - mirror.service_interface
+    - composer.platform_constraint
+    - database.table_prefix
+    - mutation.safety_firewall

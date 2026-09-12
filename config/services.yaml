@@ -8,3 +8,14 @@ services:
     exclude:
       - '../src/Kernel.php'
       - '../src/TemporaringBundle.php'
+
+  App\Temporaring\ServiceInterface\TempoPythonRunnerServiceInterface:
+    alias: App\Temporaring\Service\TempoPythonRunnerService
+
+  App\Temporaring\Service\TempoPythonRunnerService:
+    arguments:
+      $projectDir: '%kernel.project_dir%'
+      $pythonExecutable: '%env(default:tempo_python_default:TEMPO_PYTHON)%'
+
+parameters:
+  tempo_python_default: '%kernel.project_dir%/python/.venv/Scripts/python.exe'

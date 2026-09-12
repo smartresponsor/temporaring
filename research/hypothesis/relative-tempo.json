@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "hypothesis_id": "tempo-relative-001",
+  "title": "Distinct subsystem tempo factors change relative dynamics",
+  "system": {
+    "state_variables": ["x", "y"],
+    "parameters": ["a"],
+    "base_vector_field": ["-a*x", "-a*y"],
+    "tempo_factors": ["1 + x**2", "1 + y**2"]
+  },
+  "assumptions": {
+    "smooth": true,
+    "finite_dimensional": true,
+    "tempo_positive": true
+  }
+}

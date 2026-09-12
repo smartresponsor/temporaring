@@ -16,6 +16,7 @@
     "symfony/error-handler": "^8.1",
     "symfony/form": "^8.1",
     "symfony/framework-bundle": "^8.1",
+    "symfony/process": "^8.1",
     "symfony/runtime": "^8.1",
     "symfony/security-bundle": "^8.1",
     "symfony/serializer": "^8.1",
@@ -52,7 +53,7 @@
     "lint:container": "php bin/console lint:container",
     "phpstan": "phpstan analyse src tests --level=8 --memory-limit=1G",
     "gating": "gating check --target=.",
-    "test": "phpunit"
+    "test": "phpunit tests"
   },
   "config": {
     "allow-plugins": {

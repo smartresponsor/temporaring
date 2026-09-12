@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "hypothesis_id": "tempo-common-scalar-001",
+  "title": "Common positive tempo factor is removable",
+  "system": {
+    "state_variables": ["x", "y"],
+    "parameters": ["k"],
+    "base_vector_field": ["y", "-k*x"],
+    "tempo_factors": ["1 + x**2"]
+  },
+  "assumptions": {
+    "smooth": true,
+    "finite_dimensional": true,
+    "tempo_positive": true
+  }
+}

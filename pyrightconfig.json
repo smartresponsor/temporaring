@@ -1,0 +1,8 @@
+{
+  "include": ["python/src", "python/tests"],
+  "venvPath": "python",
+  "venv": ".venv",
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "strict",
+  "reportMissingTypeStubs": false
+}
