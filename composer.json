@@ -1,0 +1,69 @@
+{
+  "name": "temporaring/tempo",
+  "description": "Temporaring component and System Tempo research orchestration runtime.",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.4",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "doctrine/dbal": "^4.0",
+    "doctrine/doctrine-bundle": "^3.2",
+    "doctrine/doctrine-migrations-bundle": "^4.0",
+    "doctrine/orm": "^3.3",
+    "symfony/console": "^8.1",
+    "symfony/dotenv": "^8.1",
+    "symfony/error-handler": "^8.1",
+    "symfony/form": "^8.1",
+    "symfony/framework-bundle": "^8.1",
+    "symfony/runtime": "^8.1",
+    "symfony/security-bundle": "^8.1",
+    "symfony/serializer": "^8.1",
+    "symfony/twig-bundle": "^8.1",
+    "symfony/validator": "^8.1",
+    "symfony/yaml": "^8.1",
+    "cruding/crud": "*@dev",
+    "easycorp/easyadmin-bundle": "^5.5",
+    "interfacing/interface": "*@dev",
+    "objecting/object": "*@dev",
+    "viewing/view": "*@dev"
+  },
+  "require-dev": {
+    "doctrine/doctrine-fixtures-bundle": "^4.3",
+    "friendsofphp/php-cs-fixer": "^3.95.4",
+    "gating/gate": "*@dev",
+    "phpstan/phpstan": "^2.2",
+    "phpunit/phpunit": "^10.5",
+    "symfony/phpunit-bridge": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\Temporaring\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Temporaring\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "lint:php": "php -l src/Kernel.php && php -l src/TemporaringBundle.php && php -l bin/console && php -l public/index.php",
+    "lint:yaml": "php bin/console lint:yaml config --parse-tags",
+    "lint:container": "php bin/console lint:container",
+    "phpstan": "phpstan analyse src tests --level=8 --memory-limit=1G",
+    "gating": "gating check --target=.",
+    "test": "phpunit"
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  },
+  "repositories": [
+    {"type": "path", "url": "../Gating", "options": {"symlink": true}},
+    {"type": "path", "url": "../Cruding", "options": {"symlink": true}},
+    {"type": "path", "url": "../Viewing", "options": {"symlink": true}},
+    {"type": "path", "url": "../Objecting", "options": {"symlink": true}},
+    {"type": "path", "url": "../Interfacing", "options": {"symlink": true}}
+  ]
+}

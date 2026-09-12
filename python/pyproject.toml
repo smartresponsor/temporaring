@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temporaring"
+version = "0.1.0"
+description = "Deterministic scientific compute plane for System Tempo research."
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.1",
+  "scipy>=1.14",
+  "sympy>=1.13",
+  "pydantic>=2.9"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

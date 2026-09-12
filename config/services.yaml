@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Temporaring\:
+    resource: '../src/'
+    exclude:
+      - '../src/Kernel.php'
+      - '../src/TemporaringBundle.php'

@@ -1,0 +1,17 @@
+/vendor/
+/var/
+/node_modules/
+/python/.venv/
+/python/.pytest_cache/
+/python/**/__pycache__/
+/artifacts/*
+!/artifacts/.gitkeep
+/.phpunit.cache/
+.env.local
+.env.test.local
+/.idea/
+/.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+Desktop.ini
