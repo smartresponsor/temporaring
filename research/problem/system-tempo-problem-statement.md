@@ -35,7 +35,7 @@ introduce `Gamma = Gamma(X, p, ...)`:
 dX/dt = Gamma(X, p, ...) F(X, p, ...).
 ```
 
-If `dt/dtau = Gamma^-1`, then formally `dX/dtau = Gamma F(X)`. The notation alone does not
+If `dt/dtau = Gamma^-1`, then by the chain rule `dX/dtau = F(X)` wherever the transformation is regular. The notation alone does not
 make `Gamma` physical. The decisive question is whether it changes an invariant or
 operationally measurable relation, or only changes how an unchanged trajectory is traversed.
 

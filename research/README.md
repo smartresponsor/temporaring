@@ -18,9 +18,13 @@ The project is falsification-first. A common positive scalar tempo factor multip
 10. [`architecture/php-python-boundary.md`](architecture/php-python-boundary.md)
 11. [`architecture/persistence-boundary.md`](architecture/persistence-boundary.md)
 12. [`architecture/reproducibility.md`](architecture/reproducibility.md)
-13. [`roadmap/research-roadmap.md`](roadmap/research-roadmap.md)
-14. [`roadmap/falsification-roadmap.md`](roadmap/falsification-roadmap.md)
-15. [`notes/terminology.md`](notes/terminology.md)
+13. [`tasks/v0.1-research-task.md`](tasks/v0.1-research-task.md)
+14. [`tasks/open-research-questions.md`](tasks/open-research-questions.md)
+15. [`decisions/architecture-decisions.md`](decisions/architecture-decisions.md)
+16. [`decisions/scientific-guardrails.md`](decisions/scientific-guardrails.md)
+17. [`roadmap/research-roadmap.md`](roadmap/research-roadmap.md)
+18. [`roadmap/falsification-roadmap.md`](roadmap/falsification-roadmap.md)
+19. [`notes/terminology.md`](notes/terminology.md)
 
 Canonical flow: `Hypothesis -> Model -> Experiment -> Run -> Evidence -> Verdict`.
 
