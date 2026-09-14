@@ -3,6 +3,8 @@
   "description": "Temporaring component and System Tempo research orchestration runtime.",
   "type": "project",
   "license": "proprietary",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": "^8.4",
     "ext-ctype": "*",
@@ -23,16 +25,18 @@
     "symfony/twig-bundle": "^8.1",
     "symfony/validator": "^8.1",
     "symfony/yaml": "^8.1",
-    "cruding/crud": "*@dev",
+    "collectioning/collection": "dev-master",
+    "cruding/crud": "dev-master",
     "easycorp/easyadmin-bundle": "^5.5",
-    "interfacing/interface": "*@dev",
-    "objecting/object": "*@dev",
-    "viewing/view": "*@dev"
+    "interfacing/interface": "dev-master",
+    "objecting/object": "dev-master",
+    "tabling/table": "dev-master",
+    "viewing/view": "dev-master"
   },
   "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^4.3",
     "friendsofphp/php-cs-fixer": "^3.95.4",
-    "gating/gate": "*@dev",
+    "gating/gate": "dev-master",
     "phpstan/phpstan": "^2.2",
     "phpunit/phpunit": "^10.5",
     "symfony/phpunit-bridge": "^8.1"
@@ -61,10 +65,12 @@
     }
   },
   "repositories": [
-    {"type": "path", "url": "../Gating", "options": {"symlink": true}},
-    {"type": "path", "url": "../Cruding", "options": {"symlink": true}},
-    {"type": "path", "url": "../Viewing", "options": {"symlink": true}},
-    {"type": "path", "url": "../Objecting", "options": {"symlink": true}},
-    {"type": "path", "url": "../Interfacing", "options": {"symlink": true}}
+    {"type": "path", "url": "../Gating", "options": {"symlink": true, "versions": {"gating/gate": "dev-master"}}},
+    {"type": "path", "url": "../Cruding", "options": {"symlink": true, "versions": {"cruding/crud": "dev-master"}}},
+    {"type": "path", "url": "../Collectioning", "options": {"symlink": true, "versions": {"collectioning/collection": "dev-master"}}},
+    {"type": "path", "url": "../Tabling", "options": {"symlink": true, "versions": {"tabling/table": "dev-master"}}},
+    {"type": "path", "url": "../Viewing", "options": {"symlink": true, "versions": {"viewing/view": "dev-master"}}},
+    {"type": "path", "url": "../Objecting", "options": {"symlink": true, "versions": {"objecting/object": "dev-master"}}},
+    {"type": "path", "url": "../Interfacing", "options": {"symlink": true, "versions": {"interfacing/interface": "dev-master"}}}
   ]
 }

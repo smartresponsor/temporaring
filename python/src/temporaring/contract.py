@@ -2,24 +2,29 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from typing import Annotated, Literal
+
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
+
+
+NonEmptyString = Annotated[str, StringConstraints(min_length=1)]
 
 
 class TempoAssumptions(BaseModel):
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", strict=True)
 
-    smooth: bool = True
-    finite_dimensional: bool = True
-    tempo_positive: bool = True
+    smooth: bool
+    finite_dimensional: bool
+    tempo_positive: bool
 
 
 class TempoSystem(BaseModel):
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", strict=True)
 
-    state_variables: list[str] = Field(min_length=1)
-    parameters: list[str] = Field(default_factory=list)
-    base_vector_field: list[str] = Field(min_length=1)
-    tempo_factors: list[str] = Field(min_length=1)
+    state_variables: list[NonEmptyString] = Field(min_length=1)
+    parameters: list[NonEmptyString]
+    base_vector_field: list[NonEmptyString] = Field(min_length=1)
+    tempo_factors: list[NonEmptyString] = Field(min_length=1)
 
     @model_validator(mode="after")
     def validate_dimensions(self) -> "TempoSystem":
@@ -32,10 +37,10 @@ class TempoSystem(BaseModel):
 
 
 class TempoHypothesis(BaseModel):
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid", strict=True)
 
-    schema_version: str
-    hypothesis_id: str = Field(min_length=1)
-    title: str = Field(min_length=1)
+    schema_version: Literal["1.0"]
+    hypothesis_id: NonEmptyString
+    title: NonEmptyString
     system: TempoSystem
-    assumptions: TempoAssumptions = Field(default_factory=TempoAssumptions)
+    assumptions: TempoAssumptions

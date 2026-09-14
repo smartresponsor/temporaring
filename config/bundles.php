@@ -7,6 +7,8 @@ return [
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     App\Temporaring\TemporaringBundle::class => ['all' => true],
+    App\Collectioning\CollectioningBundle::class => ['all' => true],
+    App\Tabling\TablingBundle::class => ['all' => true],
     App\Cruding\CrudingBundle::class => ['all' => true],
     App\Viewing\ViewingBundle::class => ['all' => true],
     App\Interfacing\InterfacingBundle::class => ['all' => true],

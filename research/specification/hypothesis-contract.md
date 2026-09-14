@@ -20,7 +20,7 @@ is positive everywhere.
 
 Semantic constraints also require `base_vector_field` length to equal the number of state variables and `tempo_factors` to contain either one global factor or one factor per state variable. Those cross-field constraints are currently enforced by the Pydantic implementation rather than encoded in the JSON Schema itself.
 
-Current implementation debt: direct Pydantic validation is slightly more permissive than the canonical JSON Schema because it supplies defaults and does not yet enforce `schema_version = "1.0"` as a literal. The runner should ultimately validate the canonical schema first or bring the Pydantic contract into exact parity before this boundary is treated as fully strict.
+The Python Pydantic mirror now matches the canonical structural requirements: required fields have no implicit defaults, `schema_version` is the literal `"1.0"`, canonical strings are non-empty, unknown fields are forbidden, and scalar coercion is disabled. Pydantic additionally enforces the documented cross-field dimension constraints, which remain semantic validation beyond the JSON Schema's structural contract.
 
 Runs should consume immutable hypothesis payloads. Scientific mutation should create a new
 identity or preserve explicit parentage rather than silently editing evidence-generating input.
