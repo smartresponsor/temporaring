@@ -7,9 +7,9 @@ operational comparison.
 Candidate novelty includes:
 
 - dimensionless observable changes that cannot be restored by a legitimate redefinition;
-- relative tempo ratios such as `Gamma_A / Gamma_B` that affect a measurable relation;
+- non-unit relative tempo ratios such as `Gamma_A / Gamma_B` on dynamically active components that survive admissible simplification and affect a measurable relation;
 - persistent subsystem disagreement in phase, event counts, or state relations;
-- inability to define one global monotonic reparameterization for all coupled equations;
+- inability to define one global monotonic reparameterization for all coupled equations, beyond the v0.1 algebraic active-factor compatibility obstruction;
 - changes in state-space orbit geometry, fixed points, separatrices, attractors, or topology;
 - invariant phase, synchronization, resonance, event-order, or return-map relations;
 - coupling-generated effects that disappear in the uncoupled limit but not under a global

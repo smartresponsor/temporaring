@@ -24,6 +24,19 @@ assumptions or implemented rules.
 This classification identifies an unsupported model class. Its verdict should ordinarily be
 `inconclusive`; unsupported is not equivalent to false.
 
+## Assumption conflicts
+
+A contract-valid payload can still contain semantic assumptions contradicted by symbolic
+content. Such cases are `inconclusive`, not survivors. For example, an active tempo factor that
+simplifies identically to zero conflicts with a declared `tempo_positive = true` assumption and
+is classified as `tempo_assumption_conflict`.
+
+## Dynamically trivial tempo
+
+If the complete baseline vector field is identically zero, component tempo factors cannot
+change the stated dynamics. The v0.1 classifier therefore uses
+`tempo_irrelevant_zero_vector_field` with status `falsified` for the novelty claim.
+
 ## Authority
 
 Final verdicts for implemented experiments are produced by deterministic code. LLMs may

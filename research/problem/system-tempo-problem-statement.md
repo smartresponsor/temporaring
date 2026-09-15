@@ -53,13 +53,15 @@ speed changes.
 ## Candidate route to nontriviality
 
 For interacting subsystems, a dimensionless relation such as `R_AB = Gamma_A / Gamma_B` may
-be relevant if no single global reparameterization removes both factors while preserving
-couplings and observables. This is a research question, not a conclusion.
+be relevant when it is symbolically nontrivial on dynamically active components and no single
+global reparameterization removes both factors while preserving couplings and observables.
+The v0.1 active-factor compatibility filter can detect the first obstruction, but global coupled
+compatibility remains a research question rather than a conclusion.
 
 ## Open questions
 
 - What exact invariant distinguishes System Tempo from time reparameterization?
-- Can `Gamma_A / Gamma_B` be operationally measured?
+- Can a symbolically nontrivial active-component ratio `Gamma_A / Gamma_B` be operationally measured?
 - Under what couplings can distinct subsystem tempos not be removed globally?
 - What is the minimal physically meaningful clock or reference subsystem?
 - Does physical novelty require multiple interacting clocks?

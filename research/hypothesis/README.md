@@ -6,7 +6,7 @@ research fixtures.
 `common-positive.json` represents a common positive tempo factor. Expected result:
 `pure_time_reparameterization / falsified`.
 
-`relative-tempo.json` represents distinct component tempo factors. Expected result:
+`relative-tempo.json` represents distinct component tempo factors under a declared positivity assumption. Expected result:
 `relative_tempo_candidate / survived`.
 
 `survived` means only that the hypothesis passed the common-scalar no-go filter; it does not

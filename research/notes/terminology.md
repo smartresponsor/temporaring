@@ -15,8 +15,7 @@ equation does not make it physically observable.
 
 **Time reparameterization** changes the parameter used to traverse a trajectory.
 
-**Relative tempo** is a relation such as `Gamma_A / Gamma_B`, interesting only if it affects
-an invariant or operational observable.
+**Relative tempo** is a relation such as `Gamma_A / Gamma_B` between dynamically active components, interesting only when it is symbolically nontrivial and affects an invariant or operational observable.
 
 **Hypothesis** is the central immutable scientific claim. **Experiment** is a deterministic
 test specification. **Run** is one execution. **Evidence** is reproducible output. **Verdict**

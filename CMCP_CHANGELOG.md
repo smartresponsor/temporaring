@@ -38,3 +38,15 @@
 - RC implementation completed: sealed the strict Pydantic structural mirror, added negative contract regressions, normalized first-party `dev-master` path identities, exposed the reachable Collectioning/Tabling path closure, and registered their bundles so canonical Cruding services autowire in the standalone Temporaring host.
 - Verification results: `bin/check-python.ps1` passed Pyright strict with 0 errors, pytest with 5 passing tests, and both canonical runner smokes; `composer validate --strict --check-lock`, `lint:php`, `lint:yaml`, `lint:container`, PHPStan level 8, and Composer audit all passed. PHPUnit executed successfully but reported `No tests executed!`, reflecting the current empty PHP test surface rather than a test failure.
 - Gating remains externally blocked by the pre-existing deletion of `.gating/config/severity.yaml`; the gate exits 2 before rule evaluation. This run deliberately leaves all four pre-existing `.gating` deletions untouched.
+
+## 2026-09-15
+
+- Fresh local reconnaissance confirmed `master` at `0280fba5bbaf4ed34ce5b751f4589399924a1fc8`, with no upstream configured and only the same four pre-existing tracked `.gating/` deletions dirty before this work.
+- Confirmed the JSON Schema/Pydantic parity debt from the older transfer note is already closed in the authoritative local state: literal schema version, required fields, strict scalar types, closed objects, and regression coverage are present.
+- Tightened the v0.1 relative-tempo compatibility classification: symbolically equivalent component factors remain removable common tempo; positive distinct factors remain `relative_tempo_candidate` / `survived`; distinct factors without a positivity assumption now return `sign_indefinite_relative_tempo` / `inconclusive` because zeros and sign changes remain unresolved.
+- Corrected the root README so v0.1 no longer implies that a surviving factor already produces invariant observables; survivors are only candidates for stronger invariant or operational analysis.
+- Added deterministic regressions for symbolic common-factor reduction and sign-indefinite distinct factors.
+- `bin/check-python.ps1` passed with Pyright strict at 0 errors/warnings/informations, 11 pytest tests passing, and both canonical runner smoke fixtures returning their expected scoped verdicts.
+- The four pre-existing `.gating/` deletions remain untouched and are excluded from the scope of this work.
+- Extended the compatibility test to active baseline components using symbolic `Gamma_i / Gamma_ref` ratios; tempo factors attached only to identically zero baseline components no longer create false relative-tempo survivors.
+- Added deterministic handling for an identically zero baseline vector field (`tempo_irrelevant_zero_vector_field` / `falsified`) and for declared positivity contradicted by an active factor simplifying to zero (`tempo_assumption_conflict` / `inconclusive`).

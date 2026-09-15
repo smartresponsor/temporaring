@@ -15,7 +15,9 @@ Target run provenance includes:
 - timestamp.
 
 The current runner already records input SHA-256, Python version, and SymPy version. That is a
-bootstrap, not the final provenance model.
+bootstrap, not the final provenance model. Because v0.1 classifications depend on symbolic
+simplification, the recorded SymPy version is part of scientific replay context rather than
+incidental runtime metadata.
 
 For LLM-originated hypotheses also record model identifier, prompt hash, parent hypothesis ID,
 and mutation reason.

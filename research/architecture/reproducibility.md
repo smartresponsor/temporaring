@@ -7,6 +7,8 @@ The intended chain is:
 
 `immutable hypothesis -> versioned experiment -> code/dependency fingerprint -> deterministic run -> hashed evidence -> verdict`
 
+For the v0.1 reparameterization experiment, replay must include the same symbolic simplification and active-component compatibility rules; changing those rules changes the experiment implementation even when the input hypothesis is byte-identical.
+
 Symfony records lifecycle/provenance metadata. Python executes the scientific method. Git
 identifies source code; dependency fingerprints identify the runtime; artifact hashes connect
 evidence to the run that generated it.

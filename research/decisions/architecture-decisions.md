@@ -26,7 +26,7 @@ Pyright configuration belongs in the root of the same Symfony repository while P
 
 ## Research authority
 
-`Hypothesis` is the central scientific object. `Agent` and `Prompt` are auxiliary orchestration concepts and cannot become authorities for mathematical verdicts.
+`Hypothesis` is the central scientific object. `Agent` and `Prompt` are auxiliary orchestration concepts and cannot become authorities for mathematical verdicts. Symbolic compatibility and assumption-conflict decisions belong to deterministic experiment code and must remain replayable from immutable input.
 
 ## Generated evidence
 

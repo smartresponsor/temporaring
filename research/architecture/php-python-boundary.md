@@ -16,8 +16,10 @@ Symfony Process executes the repository-local Python environment by default, wit
 JSON Schema is the canonical structural hypothesis contract; Pydantic is the Python
 implementation mirror plus semantic validation. The mirror enforces the same required fields,
 literal schema version, non-empty canonical strings, closed objects, and strict scalar types,
-then adds the documented cross-field dimension checks. PHP must not create a divergent
-scientific-input schema.
+then adds the documented cross-field dimension checks. The deterministic classifier adds
+scientific semantic checks such as active-component selection, symbolic tempo-factor
+compatibility, and obvious positivity contradictions; those are experiment logic rather than
+structural schema rules. PHP must not create a divergent scientific-input schema.
 
 Runner stdout is machine-readable result data. Process failure or malformed JSON is an
 execution failure, not a scientific verdict.

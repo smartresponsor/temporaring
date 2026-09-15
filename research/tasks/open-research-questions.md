@@ -6,14 +6,14 @@ These questions are intentionally unresolved. They define the research backlog r
 
 - When does a local time transformation fail to extend globally?
 - Which singularities in `Gamma` are coordinate failures, and which change physical structure?
-- How should zeros and sign changes of `Gamma` be classified?
+- How should nontrivial zeros and sign changes of `Gamma` be classified beyond the currently detected identically-zero contradiction case?
 - Which phase-space properties remain invariant under admissible transformations?
 
 ## Relative tempo
 
-- Can `R_AB = Gamma_A / Gamma_B` be defined operationally for interacting subsystems?
+- Can a symbolically nontrivial active-component ratio `R_AB = Gamma_A / Gamma_B` be defined operationally for interacting subsystems?
 - What minimal coupling makes relative tempo observable rather than conventional?
-- Can one global `tau` remove two subsystem tempo factors while preserving coupling?
+- Beyond the implemented active-factor equality/ratio filter, when can one global `tau` remove multiple subsystem tempo factors while preserving coupling globally?
 - Which dimensionless ratios, phases, event counts, or synchronization observables are decisive?
 - Does physical novelty require at least two independently modelled clocks or reference processes?
 

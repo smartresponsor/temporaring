@@ -41,20 +41,57 @@ def classify_reparameterization(hypothesis: TempoHypothesis) -> TempoClassificat
         )
 
     factors = hypothesis.system.tempo_factors
+    symbols = {
+        name: sympy.Symbol(name)
+        for name in (*hypothesis.system.state_variables, *hypothesis.system.parameters)
+    }
+    sympify = getattr(sympy, "sympify")
+    simplify = getattr(sympy, "simplify")
+
     if len(factors) == 1:
-        common = True
+        active_factors = factors
     else:
-        symbols = {
-            name: sympy.Symbol(name)
-            for name in (*hypothesis.system.state_variables, *hypothesis.system.parameters)
-        }
-        sympify = getattr(sympy, "sympify")
-        simplify = getattr(sympy, "simplify")
-        parsed: list[Any] = [sympify(expression, locals=symbols) for expression in factors]
-        common = all(bool(simplify(expression - parsed[0]) == 0) for expression in parsed[1:])
+        base_components: list[Any] = [
+            sympify(expression, locals=symbols)
+            for expression in hypothesis.system.base_vector_field
+        ]
+        active_factors = [
+            factor
+            for factor, component in zip(factors, base_components, strict=True)
+            if not bool(simplify(component) == 0)
+        ]
+
+        if not active_factors:
+            return TempoClassification(
+                classification="tempo_irrelevant_zero_vector_field",
+                status="falsified",
+                reason="the baseline vector field is identically zero, so tempo factors do not change the dynamics",
+                transformation=None,
+                invariants=("state_space_orbits", "fixed_points", "orbit_topology"),
+            )
+
+    parsed: list[Any] = [sympify(expression, locals=symbols) for expression in active_factors]
+    simplified = [simplify(expression) for expression in parsed]
+    has_zero_factor = any(bool(expression == 0) for expression in simplified)
+
+    if hypothesis.assumptions.tempo_positive and has_zero_factor:
+        return TempoClassification(
+            classification="tempo_assumption_conflict",
+            status="inconclusive",
+            reason="tempo_positive is declared but an active tempo factor simplifies identically to zero",
+            transformation=None,
+            invariants=(),
+        )
+
+    reference = simplified[0]
+    if bool(reference == 0):
+        common = all(bool(expression == 0) for expression in simplified[1:])
+    else:
+        compatibility_ratios = [simplify(expression / reference) for expression in simplified[1:]]
+        common = all(bool(ratio == 1) for ratio in compatibility_ratios)
 
     if common and hypothesis.assumptions.tempo_positive:
-        factor = factors[0]
+        factor = active_factors[0]
         return TempoClassification(
             classification="pure_time_reparameterization",
             status="falsified",
@@ -72,10 +109,25 @@ def classify_reparameterization(hypothesis: TempoHypothesis) -> TempoClassificat
             invariants=(),
         )
 
+    if not hypothesis.assumptions.tempo_positive:
+        return TempoClassification(
+            classification="sign_indefinite_relative_tempo",
+            status="inconclusive",
+            reason=(
+                "distinct component tempo factors obstruct one common scalar reparameterization, "
+                "but positivity was not assumed so zeros or sign changes remain unresolved"
+            ),
+            transformation=None,
+            invariants=(),
+        )
+
     return TempoClassification(
         classification="relative_tempo_candidate",
         status="survived",
-        reason="distinct component tempo factors can change vector-field direction and relative dynamics",
+        reason=(
+            "positive distinct component tempo factors obstruct one common scalar "
+            "reparameterization and may change vector-field direction or relative dynamics"
+        ),
         transformation=None,
         invariants=(),
     )

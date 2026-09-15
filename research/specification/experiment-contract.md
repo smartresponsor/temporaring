@@ -9,7 +9,9 @@ hypothesis and from a concrete Run.
 
 The initial experiment is temporal-reparameterization classification: under declared v0.1
 assumptions, can the tempo factor be removed by one admissible reparameterization, or must the
-hypothesis proceed to stronger analysis?
+hypothesis proceed to stronger analysis? For component-wise factors, the current deterministic
+method first removes identically inactive baseline components and tests symbolic active-factor
+compatibility through `Gamma_i / Gamma_ref` ratios before issuing a survivor verdict.
 
 Future experiment records should include a stable identifier/version, hypothesis/model
 reference, deterministic method identifier, assumptions/preconditions, parameters/tolerances,

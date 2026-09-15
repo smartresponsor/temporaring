@@ -18,7 +18,7 @@ Canonical identity:
 - PHP namespace: `App\\Temporaring\\`;
 - subject prefix: `Tempo*`.
 
-The first research target is to classify when a system-tempo factor is a pure time reparameterization and when it produces invariant observables.
+The first research target is to classify when a System Tempo factor is a pure time reparameterization and when it survives that no-go filter as a candidate for stronger invariant or operational analysis.
 
 ## Research documentation
 

@@ -2,7 +2,7 @@
 
 This tree is the durable research specification for **System Tempo**, the research/physical concept investigated by the **Temporaring** engineering component.
 
-The project is falsification-first. A common positive scalar tempo factor multiplying an autonomous vector field often changes only traversal speed, not the state-space trajectory. “Time runs differently” is therefore not enough for new physics.
+The project is falsification-first. A common positive scalar tempo factor multiplying an autonomous vector field often changes only traversal speed, not the state-space trajectory. Component-wise factors are compared only on dynamically active baseline components before any relative-tempo survivor is admitted. “Time runs differently” is therefore not enough for new physics.
 
 ## Reading order
 

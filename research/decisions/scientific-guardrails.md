@@ -8,7 +8,7 @@ Every important statement should be identifiable as established mathematics or p
 
 ## Parameterization is not discovery
 
-A model does not become new physics merely because a new symbol, internal time coordinate, or state-dependent rate has been introduced. Physical novelty requires an invariant or operational distinction that survives admissible transformations.
+A model does not become new physics merely because a new symbol, internal time coordinate, or state-dependent rate has been introduced. Physical novelty requires an invariant or operational distinction that survives admissible transformations. Likewise, a non-unit symbolic ratio between active tempo factors is only an obstruction to the simplest common reparameterization, not itself evidence of new physics.
 
 ## Survival is not validation
 

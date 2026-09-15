@@ -16,7 +16,9 @@ component.
 
 `assumptions` contains `smooth`, `finite_dimensional`, and `tempo_positive`.
 `tempo_positive` is currently a declared assumption, not a symbolic proof that the expression
-is positive everywhere.
+is positive everywhere. The classifier may reject an obvious semantic contradiction when an
+active tempo factor simplifies identically to zero, but general positivity, zero-set, and sign
+analysis remain outside the current contract validator.
 
 Semantic constraints also require `base_vector_field` length to equal the number of state variables and `tempo_factors` to contain either one global factor or one factor per state variable. Those cross-field constraints are currently enforced by the Pydantic implementation rather than encoded in the JSON Schema itself.
 
