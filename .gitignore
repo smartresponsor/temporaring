@@ -1,6 +1,8 @@
 /vendor/
 /var/
 /node_modules/
+/test-results/
+/playwright-report/
 /python/.venv/
 /python/.pytest_cache/
 /python/**/__pycache__/

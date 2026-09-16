@@ -1,0 +1,11 @@
+{
+  "name": "temporaring-playwright",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  },
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:e2e": "playwright test --pass-with-no-tests"
+  }
+}

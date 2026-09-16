@@ -75,3 +75,28 @@
 - `composer test:coverage`: PASS with PHPUnit 10.5.64 + Xdebug 3.5.1 and persistent coverage output.
 - `composer gating` remains blocked before rule evaluation by the pre-existing deletion of `.gating/config/severity.yaml`; all four pre-existing tracked `.gating` deletions remain intentionally untouched.
 - Canon041 remains a separate standalone-application tooling requirement to assess/close; this pass does not fabricate Playwright/UI coverage for a repository that currently has no established browser UI test surface.
+
+## 2026-09-16 — Canon041 browser/application test-tooling closure
+
+### Canon mapping and decision
+- Read Canon041 and Canon042 together. Canon041 is a hard standalone-Symfony tooling contract: Symfony Test Pack, Panther, repository-local Playwright dependency/config, and reproducible PHPUnit/Playwright execution paths. Canon042 is a separate runtime warning contract when explicit behavioral/UI coverage inventories are missing; it forbids treating passing test counts as a fabricated coverage percentage.
+- RC-critical work therefore closes Canon041 tooling only. No synthetic browser workflow or invented UI denominator is created for the current Temporaring repository, which has no established interactive product UI surface. Canon042 evidence remains measurable post-RC debt until real functional/behavioral/UI surfaces exist and can be inventoried honestly.
+
+### Material implementation
+- Upgraded PHPUnit from the incompatible 10.5 line to `^11.5.55`; Composer resolved 11.5.56.
+- Added `symfony/test-pack ^1.2` and `symfony/panther ^2.2`; Composer resolved Test Pack 1.2.0 and Panther 2.4.0 plus BrowserKit/CSS Selector/WebDriver test dependencies.
+- Added repository-local `package.json`, `package-lock.json`, `@playwright/test ^1.54.0`, `playwright.config.js`, and standard `npm test -> test:e2e` execution. The Playwright command intentionally permits zero browser tests until an actual UI surface is owned by Temporaring.
+- Added `/test-results/` and `/playwright-report/` to `.gitignore`; generated browser-test output remains outside source history.
+- Composer package-scoped dependency resolution refreshed the root lock to current compatible Symfony 8.1 patch packages and current local first-party path-package references; no sibling repository source was modified by this run.
+
+### Verification
+- `composer validate --strict --check-lock`: PASS.
+- `composer test`: PASS on PHPUnit 11.5.56, 3 tests / 3 assertions.
+- `composer test:coverage`: PASS with Xdebug 3.5.1 and persistent path/branch-aware summary.
+- `composer phpstan`: PASS, 0 errors.
+- `composer lint:yaml`: PASS, 5 files.
+- `composer lint:container`: PASS after one Console MCP timeout retry; the successful retry reports a valid container.
+- `npm test`: PASS through Playwright configuration with no fabricated browser tests.
+- `npm audit`: PASS, 0 vulnerabilities.
+- `composer audit`: PASS, no security advisories.
+- `composer gating`: still exits 2 before rule evaluation because pre-existing `.gating/config/severity.yaml` is deleted. The four pre-existing `.gating` deletions remain untouched and are not part of this commit.
