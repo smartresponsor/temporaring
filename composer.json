@@ -57,7 +57,11 @@
     "lint:container": "php bin/console lint:container",
     "phpstan": "phpstan analyse src tests --level=8 --memory-limit=1G",
     "gating": "gating check --target=.",
-    "test": "phpunit tests"
+    "test": "phpunit --configuration phpunit.xml.dist",
+    "test:coverage": [
+      "@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"",
+      "@php -d xdebug.mode=coverage vendor/bin/phpunit --configuration phpunit.xml.dist --path-coverage --coverage-text=var/coverage/summary.txt"
+    ]
   },
   "config": {
     "allow-plugins": {

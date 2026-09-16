@@ -50,3 +50,28 @@
 - The four pre-existing `.gating/` deletions remain untouched and are excluded from the scope of this work.
 - Extended the compatibility test to active baseline components using symbolic `Gamma_i / Gamma_ref` ratios; tempo factors attached only to identically zero baseline components no longer create false relative-tempo survivors.
 - Added deterministic handling for an identically zero baseline vector field (`tempo_irrelevant_zero_vector_field` / `falsified`) and for declared positivity contradicted by an active factor simplifying to zero (`tempo_assumption_conflict` / `inconclusive`).
+
+## 2026-09-16 — PHP executable-test baseline and RC revalidation
+
+### Reconnaissance and canon mapping
+- Re-read Temporaring root guidance, Composer/runtime source, the complete documented `research/` reading order (problem, specification, architecture, tasks, decisions, roadmaps, terminology), and required Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contracts.
+- Consulted authoritative Canonization rules Canon000, Canon001, Canon002, Canon003, Canon007, Canon008, Canon018, Canon019, Canon020, Canon021, Canon022, Canon023, Canon024, Canon025, Canon026, Canon029, Canon030, Canon032, Canon033, Canon034, Canon036, Canon038, Canon039, Canon041, Canon043, Canon044, and Canon045 where applicable.
+- Canon039 mapping: Temporaring contains executable production PHP but previously had no repository-owned PHPUnit config, no persistent coverage script, and `composer test` exited successfully with `No tests executed!`.
+- RC-critical workstream: establish a real executable PHP regression/coverage contract without changing System Tempo scientific semantics. Growth remains richer run provenance, experiment persistence/replay indexing, artifact comparison, and additional deterministic experiments after v0.1 correctness is sealed.
+
+### Material implementation
+- Added repository-owned `phpunit.xml.dist` with `src/` as the explicit production coverage population.
+- Added three PHP regressions for `TempoRunResultDTO::classification()` covering canonical classification, missing classification, and invalid non-string classification fallback.
+- Updated Composer `test` to use the repository PHPUnit configuration and added persistent `test:coverage` output at `var/coverage/summary.txt`.
+- Adjusted the coverage invocation from unsupported PHPUnit-10 `--branch-coverage` to supported `--path-coverage`, preserving branch/path-aware php-code-coverage collection.
+
+### Verification and boundaries
+- `composer validate --strict`: PASS.
+- PHP lint: PASS before the test addition; PHPUnit itself then caught an initially truncated new test file, which was repaired immediately.
+- `composer test`: PASS, 3 tests / 3 assertions.
+- `composer phpstan`: PASS, 7 files / 0 errors.
+- `composer lint:yaml`: PASS, 5 files.
+- `composer lint:container`: PASS.
+- `composer test:coverage`: PASS with PHPUnit 10.5.64 + Xdebug 3.5.1 and persistent coverage output.
+- `composer gating` remains blocked before rule evaluation by the pre-existing deletion of `.gating/config/severity.yaml`; all four pre-existing tracked `.gating` deletions remain intentionally untouched.
+- Canon041 remains a separate standalone-application tooling requirement to assess/close; this pass does not fabricate Playwright/UI coverage for a repository that currently has no established browser UI test surface.
