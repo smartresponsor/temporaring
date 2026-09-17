@@ -100,3 +100,26 @@
 - `npm audit`: PASS, 0 vulnerabilities.
 - `composer audit`: PASS, no security advisories.
 - `composer gating`: still exits 2 before rule evaluation because pre-existing `.gating/config/severity.yaml` is deleted. The four pre-existing `.gating` deletions remain untouched and are not part of this commit.
+
+## 2026-09-17 — RC coverage, quality, and executable-canon closure
+
+### Reconnaissance and market baseline
+- Re-read Temporaring guidance, README, Composer manifests, PHP runtime/test surfaces, and the existing execution journal; preserved the four pre-existing tracked `.gating/` deletions as external state.
+- Reused the required Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contour already read for this repository and mapped the current pass to Canon029, Canon030, Canon039, Canon040, Canon041, Canon042, Canon043, Canon044, and Canon045.
+- Current reproducible-research practice emphasizes machine-readable environments/dependencies, deterministic reruns, and separation of source from generated evidence/provenance. Temporaring's `src/`, `python/`, `research/`, and `artifacts/` split already follows that direction; RC work therefore stayed on reproducibility and executable acceptance rather than speculative experiment-platform breadth.
+
+### Material implementation
+- Added `TempoRuntimeCoverageTest` covering the command success and invalid-input contracts, a real PHP-to-Python execution of the canonical `common-positive.json` hypothesis, and fail-closed missing-hypothesis behavior.
+- Raised persistent PHP coverage from lines 8.33% / methods 28.57% / branches 100% to lines 90.91% / methods 85.71% / branches 84.62%, closing Canon040 without synthetic assertions.
+- Added repository-owned `phpstan.neon`, Composer PHP-CS-Fixer check/fix scripts, and explicit schema validation/migration-currentness scripts using isolated in-memory SQLite test DSNs.
+- Added repository-owned `config/tempo_gating_profile.yaml` and `config/tempo_gating_rules.yaml`; the Gating command now executes the installed `gating/gate` policy directly and does not restore or depend on the deleted legacy `.gating` consumer files.
+
+### Verification and residual debt
+- `composer validate --strict --check-lock`: PASS.
+- `composer cs:check`: PASS after line-ending normalization of the new test.
+- `composer phpstan`: PASS, 0 errors.
+- `composer test:coverage`: PASS, 7 tests / 13 assertions; Canon040 PASS at 90.9% lines, 85.7% methods, 84.6% branches.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings, pytest 11/11, both canonical runner smoke fixtures returned expected scoped verdicts.
+- `composer schema:parity`: PASS; Doctrine mapping is valid and migrations report up to date on the isolated test contour.
+- `composer gating`: PASS with 36 rules, 0 failures, 1 warning, 4 skipped. The sole warning is Canon042 because no honest behavioral/UI coverage inventory exists yet.
+- The four pre-existing `.gating/` deletions remain untouched and excluded from this pass.

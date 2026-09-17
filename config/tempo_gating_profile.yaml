@@ -1,0 +1,17 @@
+component:
+  name: Temporaring
+  nameEntity: tempo
+  namespace: App\Temporaring
+  business_prefix: Tempo
+  subject_prefix: Tempo
+  subject_tokens:
+    - Tempo
+  database_prefix: tempo_
+  typed_layers_required: true
+  service_interface_mirror: true
+  route_owner_root: tempo
+  route_owner_roots:
+    - tempo
+  mutation_mode: allowed
+  secret_scan: enabled
+  release:

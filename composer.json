@@ -57,8 +57,21 @@
     "lint:php": "php -l src/Kernel.php && php -l src/TemporaringBundle.php && php -l bin/console && php -l public/index.php",
     "lint:yaml": "php bin/console lint:yaml config --parse-tags",
     "lint:container": "php bin/console lint:container",
-    "phpstan": "phpstan analyse src tests --level=8 --memory-limit=1G",
-    "gating": "gating check --target=.",
+    "cs:check": "php-cs-fixer fix --dry-run --diff --verbose",
+    "cs:fix": "php-cs-fixer fix --verbose",
+    "phpstan": "phpstan analyse --memory-limit=1G",
+    "schema:validate": [
+      "@putenv DATABASE_URL=sqlite:///:memory:",
+      "@putenv INFRA_DATABASE_URL=sqlite:///:memory:",
+      "php bin/console doctrine:schema:validate --skip-sync --env=test"
+    ],
+    "migrations:up-to-date": [
+      "@putenv DATABASE_URL=sqlite:///:memory:",
+      "@putenv INFRA_DATABASE_URL=sqlite:///:memory:",
+      "php bin/console doctrine:migrations:up-to-date --env=test"
+    ],
+    "schema:parity": ["@schema:validate", "@migrations:up-to-date"],
+    "gating": "php vendor/bin/gating check --target=. --profile=config/tempo_gating_profile.yaml --rule-set=config/tempo_gating_rules.yaml --policy-root=vendor/gating/gate/.gating --severity-config=vendor/gating/gate/.gating/config/severity.yaml",
     "test": "phpunit --configuration phpunit.xml.dist",
     "test:coverage": [
       "@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"",
