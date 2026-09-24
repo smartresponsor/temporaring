@@ -123,3 +123,43 @@
 - `composer schema:parity`: PASS; Doctrine mapping is valid and migrations report up to date on the isolated test contour.
 - `composer gating`: PASS with 36 rules, 0 failures, 1 warning, 4 skipped. The sole warning is Canon042 because no honest behavioral/UI coverage inventory exists yet.
 - The four pre-existing `.gating/` deletions remain untouched and excluded from this pass.
+
+## 2026-09-24 — scientific expression boundary hardening
+
+### Reconnaissance baseline
+- Re-read the repository guidance, root README/Composer manifests, complete documented `research/` reading order, PHP control plane, Python compute plane, tests, schema, Gating profile/rule set, and current Git state.
+- Current worktree entered this run with unrelated/concurrent changes in `.gating/README.md`, `composer.json`, `composer.lock`, `composer.prod.json`, and untracked `.gating/config/`; this pass does not absorb or overwrite those changes.
+- Read the mandatory sibling responsibility contracts from Objecting, Cruding, Viewing, and Interfacing and confirmed this hardening remains inside Temporaring's deterministic scientific-compute boundary: no Entity/system-field, generic CRUD, rendering, shell, or navigation ownership moves into Temporaring.
+- Read Canonization as the normative textual source and Gating as executable enforcement. Consulted Canon018 directly for package/namespace identity and Canon012 for typed dynamic-boundary handling; existing role-first `App\\Temporaring\\` PHP structure remains unchanged and applicable canon stays authoritative over local historical patterns.
+- Code Memory scope discovery reports no declared `memory:scope:resolve` Composer script, so no repository memory graph is available through the declared contract in this workspace.
+
+### Market and maturity baseline
+- Mature durable-workflow systems separate lifecycle orchestration from execution history/replay, while temporal-modeling practice distinguishes audit/history semantics from workflow state. Temporaring therefore keeps workflow/event-store concerns outside its bounded responsibility.
+- SymPy's current documentation explicitly warns that `sympify()` evaluates string input and must not be used with unsanitized input. Temporaring currently feeds hypothesis expressions from JSON directly into `sympify()`, making the expression parser both a security boundary and a scientific-integrity boundary.
+- RC-critical workstream: replace eval-backed string parsing with a deterministic allowlisted arithmetic/function parser constrained to declared state variables and parameters; add regression coverage and document the expression grammar.
+- Growth workstream remains separate: richer provenance/dependency fingerprints, persisted run/replay indexing, artifact comparison UX, and stronger coupled-system/global-reparameterization experiments.
+
+### Canon mapping and implementation
+- Canon011: unsupported or malformed expressions fail observably as validation/execution errors; no scientific success-like fallback is introduced.
+- Canon012: raw JSON remains a dynamic ingress boundary, while Pydantic models and the dedicated expression parser establish the typed/validated internal contract before classification.
+- Canon017: updated the hypothesis contract and PHP/Python boundary documentation to describe the actual restricted expression grammar and fail-closed behavior.
+- Canon018: package identity remains `temporaring/tempo`, PHP root remains `App\\Temporaring\\`, and no PHP naming/tree migration was required.
+- Objecting, Cruding, Viewing, and Interfacing manifests/contracts were checked where present; the selected change is non-applicable to their owned entity/system-field, generic CRUD, rendering, and shell surfaces. Temporaring and Interfacing have no root `MANIFEST.json`; no manifest was invented.
+- Added `python/src/temporaring/expression.py`: an AST-based, eval-free parser with bounded input/AST size, declared-symbol resolution, arithmetic operators, canonical constants, and an explicit one-argument mathematical-function allowlist.
+- Routed both base-vector-field and tempo-factor parsing through that parser. Added regressions for supported functions, undeclared symbols, imports/system calls, file calls, attribute access, and subscripting.
+- Added `/.console-mcp/` to `.gitignore` because guarded verification creates local execution metadata that is not repository source.
+
+### Verification and residual debt
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical runner smoke fixtures returned their expected v0.1 verdicts.
+- `composer validate --strict --check-lock`: PASS.
+- `composer cs:check`: PASS.
+- `composer phpstan`: PASS, 0 errors.
+- `composer test`: PASS, 7 tests / 13 assertions.
+- `composer lint:yaml`: PASS, 7 YAML files valid.
+- `composer lint:container`: PASS.
+- `composer schema:parity`: PASS; Doctrine mapping valid and migrations up to date on isolated in-memory SQLite test DSNs.
+- `composer audit`: PASS; no security vulnerability advisories found.
+- Initial `composer gating` bootstrap failed before rule evaluation because installed vendor metadata still exposed the prior `Gating\\Gate\\` autoload while the already-current lock records `App\\Gating\\`. A source-preserving `composer install --no-scripts` synchronized generated vendor state to the existing lock.
+- Re-run `composer gating`: PASS with 36 rules, 0 failures, 1 warning, 4 skipped. The only warning remains Canon042 (behavioral/UI coverage evidence missing); it is pre-existing, explicit, and unrelated to the scientific-expression boundary.
+- No remote or upstream is configured on local `master`; publication cannot be performed without inventing repository integration state.
+

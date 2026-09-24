@@ -8,6 +8,7 @@ from typing import Any
 import sympy
 
 from temporaring.contract import TempoHypothesis
+from temporaring.expression import parse_expression
 
 
 @dataclass(frozen=True)
@@ -45,14 +46,13 @@ def classify_reparameterization(hypothesis: TempoHypothesis) -> TempoClassificat
         name: sympy.Symbol(name)
         for name in (*hypothesis.system.state_variables, *hypothesis.system.parameters)
     }
-    sympify = getattr(sympy, "sympify")
     simplify = getattr(sympy, "simplify")
 
     if len(factors) == 1:
         active_factors = factors
     else:
         base_components: list[Any] = [
-            sympify(expression, locals=symbols)
+            parse_expression(expression, symbols)
             for expression in hypothesis.system.base_vector_field
         ]
         active_factors = [
@@ -70,7 +70,7 @@ def classify_reparameterization(hypothesis: TempoHypothesis) -> TempoClassificat
                 invariants=("state_space_orbits", "fixed_points", "orbit_topology"),
             )
 
-    parsed: list[Any] = [sympify(expression, locals=symbols) for expression in active_factors]
+    parsed: list[Any] = [parse_expression(expression, symbols) for expression in active_factors]
     simplified = [simplify(expression) for expression in parsed]
     has_zero_factor = any(bool(expression == 0) for expression in simplified)
 

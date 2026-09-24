@@ -14,6 +14,14 @@ Required top-level fields are `schema_version`, `hypothesis_id`, `title`, `syste
 expressions, and `tempo_factors`. v0.1 permits one global factor or one factor per state
 component.
 
+Scientific expressions are parsed through a restricted deterministic grammar. Expressions may
+use real numeric literals, declared state variables and parameters, `pi` and `E`, arithmetic
+`+`, `-`, `*`, `/`, `**`, unary signs, and the one-argument functions `sin`, `cos`, `tan`,
+`asin`, `acos`, `atan`, `sinh`, `cosh`, `tanh`, `exp`, `log`, and `sqrt`. Undeclared symbols,
+attribute/subscript access, arbitrary Python calls, keyword arguments, and other Python syntax
+are invalid hypothesis expressions. The compute plane must not use eval-backed SymPy string
+parsing for hypothesis input.
+
 `assumptions` contains `smooth`, `finite_dimensional`, and `tempo_positive`.
 `tempo_positive` is currently a declared assumption, not a symbolic proof that the expression
 is positive everywhere. The classifier may reject an obvious semantic contradiction when an

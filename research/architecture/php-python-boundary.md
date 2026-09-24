@@ -21,5 +21,11 @@ scientific semantic checks such as active-component selection, symbolic tempo-fa
 compatibility, and obvious positivity contradictions; those are experiment logic rather than
 structural schema rules. PHP must not create a divergent scientific-input schema.
 
+Expression strings cross a hostile-data boundary even for repository-authored fixtures. Python
+therefore parses them with the allowlisted arithmetic/function grammar documented by the
+hypothesis contract and resolves names only from declared state variables and parameters plus
+the canonical mathematical constants. Unsupported syntax is an execution/validation failure,
+not a scientific verdict.
+
 Runner stdout is machine-readable result data. Process failure or malformed JSON is an
 execution failure, not a scientific verdict.

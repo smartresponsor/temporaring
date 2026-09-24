@@ -22,6 +22,7 @@
 !/artifacts/.gitkeep
 /.phpunit.cache/
 /.php-cs-fixer.cache
+/.console-mcp/
 .env.local
 .env.test.local
 /.idea/

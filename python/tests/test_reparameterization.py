@@ -275,3 +275,42 @@ def test_contract_rejects_empty_strings_and_scalar_coercion() -> None:
 
     with pytest.raises(ValidationError):
         TempoHypothesis.model_validate(payload)
+
+
+def test_classifier_supports_allowlisted_mathematical_functions() -> None:
+    payload = valid_hypothesis_payload()
+    system = cast(dict[str, Any], payload["system"])
+    system["base_vector_field"] = ["sin(x)**2 + cos(x)**2"]
+    system["tempo_factors"] = ["exp(x)"]
+
+    result = classify_reparameterization(TempoHypothesis.model_validate(payload))
+
+    assert result.classification == "pure_time_reparameterization"
+    assert result.status == "falsified"
+
+
+def test_classifier_rejects_undeclared_symbols() -> None:
+    payload = valid_hypothesis_payload()
+    system = cast(dict[str, Any], payload["system"])
+    system["tempo_factors"] = ["1 + z**2"]
+
+    with pytest.raises(ValueError, match="undeclared symbol"):
+        classify_reparameterization(TempoHypothesis.model_validate(payload))
+
+
+@pytest.mark.parametrize(
+    "expression",
+    [
+        "__import__('os').system('echo unsafe')",
+        "open('unsafe.txt', 'w')",
+        "x.__class__",
+        "[x][0]",
+    ],
+)
+def test_classifier_rejects_non_arithmetic_python_syntax(expression: str) -> None:
+    payload = valid_hypothesis_payload()
+    system = cast(dict[str, Any], payload["system"])
+    system["tempo_factors"] = [expression]
+
+    with pytest.raises(ValueError):
+        classify_reparameterization(TempoHypothesis.model_validate(payload))
