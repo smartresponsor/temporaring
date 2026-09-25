@@ -5,7 +5,8 @@
     "@playwright/test": "^1.54.0"
   },
   "scripts": {
-    "test": "npm run test:e2e",
-    "test:e2e": "playwright test --pass-with-no-tests"
+    "test": "npm run test:behavioral-coverage",
+    "test:e2e": "playwright test --pass-with-no-tests",
+    "test:behavioral-coverage": "composer test && npm run test:e2e && node tools/qa/tempo-behavioral-ui-coverage.js"
   }
 }

@@ -163,3 +163,25 @@
 - Re-run `composer gating`: PASS with 36 rules, 0 failures, 1 warning, 4 skipped. The only warning remains Canon042 (behavioral/UI coverage evidence missing); it is pre-existing, explicit, and unrelated to the scientific-expression boundary.
 - No remote or upstream is configured on local `master`; publication cannot be performed without inventing repository integration state.
 
+## 2026-09-25 — Canon042 measurable behavioral coverage closure
+
+### Reconnaissance and market baseline
+- Re-read the authoritative execution specification, repository guidance, root manifests, PHP command/runner/test surfaces, System Tempo problem/no-go/v0.1/roadmap documents, and the current orchestration journal. The worktree entered this pass with concurrent changes in `.gating/README.md`, `composer.json`, `composer.lock`, `composer.prod.json`, and untracked `.gating/config/`; those surfaces were preserved rather than absorbed.
+- Re-read required Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contracts. Consulted Canon018, Canon019, Canon041, Canon042, Canon043, and Canon052 directly; Canon042 was the only executable Gating warning at baseline.
+- Market comparison: mature experiment systems such as MLflow and DVC make run inputs/results/artifacts and reproducibility metadata explicit. Temporaring already separates research specification, deterministic compute, and generated evidence; RC therefore stays focused on measurable acceptance evidence rather than adding a tracking SaaS layer.
+- RC-critical workstream: close Canon042 with a reproducible repository-owned application-surface inventory that measures the existing CLI and deterministic classification workflow without inventing browser/UI surfaces.
+- Growth workstream remains post-RC: richer run provenance/dependency fingerprints, persisted experiment/run replay indexing, artifact comparison UX, and stronger coupled-system/global-reparameterization research.
+
+### Material implementation
+- Added `tools/qa/tempo-behavioral-ui-coverage.js`. The producer fails closed if the canonical `tempo:hypothesis:run` declaration or its functional/integration regressions drift, then writes schema `behavioral-ui-coverage-v2` evidence under `var/coverage/behavioral-ui.json`.
+- Changed repository-local `npm test` to run the complete behavioral evidence workflow: PHPUnit, Playwright execution, then deterministic evidence production.
+- Inventoried functional `command:tempo:hypothesis:run`, behavioral/critical `workflow:hypothesis-classification`, and an explicitly empty UI denominator because Temporaring currently owns no interactive browser surface.
+
+### Verification and integration state
+- First npm gate exposed a truncated producer tail with a Node syntax error; repaired it and re-ran the full workflow.
+- `npm test`: PASS; PHPUnit 7 tests / 13 assertions, Playwright execution PASS with no invented UI tests, evidence emitted as functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- `composer gating`: PASS with 36 rules, 0 failures, 0 warnings, 4 skipped; Canon042 now passes at 100% for every applicable dimension, with UI 0/0 treated as an explicit empty denominator.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical runner smoke fixtures returned expected v0.1 verdicts.
+- `composer cs:check`: PASS; `composer phpstan`: PASS; `composer test`: PASS; `composer lint:php`: PASS; `composer schema:parity`: PASS; `composer validate --strict --check-lock`: PASS.
+- Local `master` HEAD is `8c79582c8b05249f2327c5c9a05022f3a3d49c8e`; no `origin` or upstream is configured, so push/PR publication remains factually unavailable. Concurrent pre-existing dirty files remain outside this pass.
+
