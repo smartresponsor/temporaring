@@ -18,7 +18,20 @@ final class TempoRuntimeCoverageTest extends TestCase
     {
         $runner = $this->createMock(TempoPythonRunnerServiceInterface::class);
         $runner->expects(self::once())->method('run')->with('fixture.json')
-            ->willReturn(new TempoRunResultDTO(['classification' => 'pure_time_reparameterization'], '{"status":"falsified"}'));
+            ->willReturn(new TempoRunResultDTO([
+                'schema_version' => '1.0',
+                'hypothesis_id' => 'tempo-test-001',
+                'status' => 'falsified',
+                'classification' => 'pure_time_reparameterization',
+                'reason' => 'test fixture',
+                'transformation' => 'd_tau = (2) * dt',
+                'invariants' => ['state_space_orbits'],
+                'provenance' => [
+                    'input_sha256' => str_repeat('a', 64),
+                    'python_version' => '3.12.1',
+                    'sympy_version' => '1.14.0',
+                ],
+            ], '{"status":"falsified"}'));
         $tester = new CommandTester(new TempoHypothesisRunCommand($runner));
         self::assertSame(Command::SUCCESS, $tester->execute(['hypothesis' => 'fixture.json']));
         self::assertStringContainsString('falsified', $tester->getDisplay());

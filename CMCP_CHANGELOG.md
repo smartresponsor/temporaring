@@ -185,3 +185,37 @@
 - `composer cs:check`: PASS; `composer phpstan`: PASS; `composer test`: PASS; `composer lint:php`: PASS; `composer schema:parity`: PASS; `composer validate --strict --check-lock`: PASS.
 - Local `master` HEAD is `8c79582c8b05249f2327c5c9a05022f3a3d49c8e`; no `origin` or upstream is configured, so push/PR publication remains factually unavailable. Concurrent pre-existing dirty files remain outside this pass.
 
+## 2026-09-26 — PHP/Python result-envelope hardening
+
+### Reconnaissance and baseline
+- Re-read the authoritative execution specification, repository guidance, current research architecture/task contracts, PHP runner/DTO/tests, Python contract/runner/classifier, Composer/package scripts, current Git state, and the existing orchestration journal.
+- Re-read the required Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contours. Normative Canonization files consulted directly for this pass include Canon001, Canon002, Canon012, Canon019, Canon021, Canon022, Canon043, and Canon045; the broader configured rule set remains executable through Temporaring Gating.
+- Target-to-canon mapping: `Command/`, `DTO/`, `Service/`, and mirrored `ServiceInterface/` already satisfy Canon001/002; no alternative layer taxonomy or generic CRUD surface exists (Canon019/021); the decoded Python JSON is a legitimate dynamic boundary, but its stable result envelope must become a validated typed internal contract under Canon012.
+- Market/maturity baseline: mature experiment platforms track run inputs, metadata, outputs/artifacts, and reproducibility context; DVC similarly makes experiment pipeline dependencies/outputs explicit. Temporaring already owns deterministic local execution and provenance bootstrap, so RC correctness is prioritized over adding a tracking SaaS or distributed execution layer.
+- RC-critical workstream selected: fail closed when Python returns syntactically valid JSON with a missing or mistyped stable result field. Growth remains persisted run indexing/replay, richer dependency fingerprints, artifact comparison UX, and broader scientific experiments.
+- Pre-existing dirty state was preserved: `.gating/README.md`, `composer.json`, `composer.lock`, `composer.prod.json`, and untracked `.gating/config/` were present before this pass and are not treated as this pass's implementation.
+
+### Material implementation
+- Hardened `TempoRunResultDTO` so the stable Python result envelope is validated at construction: schema version, hypothesis ID, status, classification, reason, optional transformation shape, invariant list, and bootstrap provenance.
+- Removed the former `classification() -> "unknown"` fallback; malformed result contracts now raise an execution error instead of being representable as a successful internal run.
+- Added negative PHPUnit regressions for missing/non-string classification and incomplete provenance.
+- Updated the PHP/Python boundary documentation to state that syntactically valid but structurally malformed result JSON is an execution-contract failure.
+
+### Verification
+- `composer lint:php`: PASS.
+- `composer cs:check`: PASS; 0 fixable files.
+- `composer phpstan`: PASS; 0 errors.
+- `composer test`: PASS; 12 tests / 25 assertions.
+- `composer test:coverage`: PASS; Canon040 evidence is lines 94.5%, methods 87.5%, branches 92.6%, all above canonical thresholds.
+- `composer lint:yaml`: PASS; 7 YAML files valid.
+- `composer lint:container`: PASS.
+- `composer schema:parity`: PASS; Doctrine mapping valid and migrations up to date on isolated test DSNs.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical runner fixtures returned their expected v0.1 envelopes.
+- Symfony runtime smoke `tempo:hypothesis:run research/hypothesis/common-positive.json --env=test`: PASS through the real PHP/Python boundary with `pure_time_reparameterization`.
+- `npm test`: PASS; PHPUnit 12/25, Playwright execution succeeded with the repository's explicit empty UI denominator, and behavioral evidence regenerated as functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- `composer validate --strict --check-lock`: PASS.
+- Composer audit: PASS; no vulnerability advisories. npm audit at high threshold: PASS; 0 vulnerabilities.
+- Final `composer gating`: PASS with 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon040 and Canon042 are fresh and green.
+- No browser/mobile/UI implementation changed, so screenshot/visual-flow evidence is not applicable to this pass.
+- Git integration scope is limited to the five owned files from this pass; the pre-existing Composer/Gating dirty state is excluded. No `origin` or upstream is configured, so publication is factually unavailable.
+

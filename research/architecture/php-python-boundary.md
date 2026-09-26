@@ -28,4 +28,8 @@ the canonical mathematical constants. Unsupported syntax is an execution/validat
 not a scientific verdict.
 
 Runner stdout is machine-readable result data. Process failure or malformed JSON is an
-execution failure, not a scientific verdict.
+execution failure, not a scientific verdict. Symfony also validates the stable result envelope
+before it becomes an internal DTO: schema/hypothesis identity, verdict status, classification,
+reason, optional transformation, invariant list, and bootstrap provenance must have their
+declared scalar/list shapes. A syntactically valid JSON object with a missing or mistyped result
+field is therefore also an execution-contract failure rather than a successful scientific run.
