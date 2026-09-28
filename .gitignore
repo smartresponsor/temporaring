@@ -11,13 +11,7 @@
 
 # Gating consumer surface: keep repository policy/profile, ignore vendored runtime snapshots.
 /.gating/*
-!/.gating/config/
-!/.gating/config/**
-!/.gating/profile/
-/.gating/profile/*
-!/.gating/profile/component/
-/.gating/profile/component/*
-!/.gating/profile/component/temporaring.yaml
+!/.gating/README.md
 /artifacts/*
 !/artifacts/.gitkeep
 /.phpunit.cache/

@@ -219,3 +219,47 @@
 - No browser/mobile/UI implementation changed, so screenshot/visual-flow evidence is not applicable to this pass.
 - Git integration scope is limited to the five owned files from this pass; the pre-existing Composer/Gating dirty state is excluded. No `origin` or upstream is configured, so publication is factually unavailable.
 
+## 2026-09-28 — RC security false-positive remediation
+
+### Reconnaissance baseline
+- Read the authoritative engine specification, repository guidance, Composer/Gating manifests, existing CMCP journal, current Git state, and the supplied CanonScanning security/Inspecting reports.
+- Preserved pre-existing dirty state in `.gating/README.md`, `composer.json`, `composer.lock`, `composer.prod.json`, and untracked `.gating/config/`; no destructive cleanup, stash, reset, or sibling-repository mutation is permitted.
+- Verified required application dependencies Objecting, Cruding, Viewing, and Interfacing are declared as development path/symlink dependencies and production package dependencies; read their available root contracts together with Gating and Canonization references.
+- Consulted Canon034 (generated/local state stays outside source history) and Canon052 (consumer `.gating/` is artifact-only; normative Gating configuration belongs in canonical application configuration).
+- Fresh Inspecting evidence for fingerprint `87c8f5d0db58511f56cebc1a0fb1912b9d80180f7da1941a6eb0cd01fd06815b` reported zero PHP-structure findings; the analyzer envelope also records a Semgrep timeout, so only the successful PHP-structure result is reused as GREEN evidence.
+- Fresh security evidence was RED solely because `security.secret_leak` scanned `python/.venv/Lib/site-packages/pydantic/types.py`, i.e. installed virtual-environment dependency code already excluded by `.gitignore`.
+
+### RC-critical workstream
+- Keep secret scanning enabled while excluding only the repository-local generated Python virtualenv through the supported `component.secret_scan_excluded_paths` profile contract.
+- Do not suppress evidence strings, disable the rule, patch Pydantic, or mutate the Gating owner repository.
+- Growth work remains separate from RC: richer experiment provenance/replay/indexing, artifact comparison, UX, and additional operational observability.
+
+### Canon mapping
+- Canon034 -> `python/.venv/` remains ignored generated/local dependency state and must not become source history.
+- Canon052 -> the scanner exception is owned by `config/tempo_gating_profile.yaml`, not consumer `.gating/` policy/config snapshots.
+- Gating `GateSecretLeakRule` -> `secret_scan_excluded_paths` is merged with default exclusions while `secret_scan: enabled` remains active.
+
+### Material implementation
+- Added `python/.venv/**` to `component.secret_scan_excluded_paths` in `config/tempo_gating_profile.yaml`; no source-security scope outside that generated dependency tree is reduced.
+
+### Verification and acceptance
+- Initial full `composer gating` exposed a real dependency-closure blocker after the security profile repair: current Viewing/Cruding require `failing/failure`, but Temporaring did not yet declare/register it.
+- Added `failing/failure` as a development path/symlink dependency, production package dependency, and standalone Symfony bundle; also closed production Collectioning/Tabling parity required by the current platform baseline.
+- Normalized `.gating/` to Canon052 artifact-only topology and restored its consumer-boundary README; executable/normative configuration remains under Symfony `config/` and the Gating package.
+- Applied Canon055 neutral platform terminology in `AGENTS.md`.
+- `composer gate`: PASS, 9 rules, 0 failed, 0 warning; `security.secret_leak` PASS with 444 files scanned.
+- `composer gating`: PASS, 36 rules, 0 failed, 0 warning, 4 intentional skips.
+- `composer validate --strict --check-lock`: PASS.
+- `composer cs:check`: PASS; 0 fixable files.
+- `composer phpstan`: PASS; 0 errors.
+- `composer test`: PASS; 12 tests / 25 assertions.
+- `composer lint:yaml`: PASS; 7 YAML files.
+- `composer lint:container`: PASS.
+- `composer schema:parity`: PASS; Doctrine mapping valid and migrations up to date on isolated SQLite test DSNs.
+- `npm test`: PASS; Playwright path executed with the explicit UI denominator and regenerated behavioral coverage evidence (functional 1/1, behavioral 1/1, UI 0/0, critical 1/1).
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical runner fixtures returned expected v0.1 envelopes.
+- Composer audit: PASS; no security vulnerability advisories.
+- Post-mutation Inspecting report `D--PhpstormProjects-www-temporaring-20260928-102820.json`: PASS for executed analyzers with 0 findings, PHPStan 0 errors, and clean PHP-structure metrics. Semgrep is not claimed GREEN because it was not present in the successful analyzer set.
+- No browser/mobile/UI implementation changed, so screenshot or visual-flow evidence is not applicable.
+- Composer/lock changes that pre-dated this execution window were reviewed and retained only where they form a coherent, tested RC dependency/tooling state; the incorrect pre-existing `.gating/README.md` replacement was repaired instead of committed.
+

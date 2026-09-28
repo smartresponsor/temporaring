@@ -1,6 +1,6 @@
 # Temporaring repository guidance
 
-Follow the SmartResponsor Canonization and Gating repositories as the authoritative architecture and executable enforcement sources.
+Follow the platform Canonization and Gating repositories as the authoritative architecture and executable enforcement sources.
 
 - PHP baseline: 8.4+.
 - Symfony baseline: 8.1+ within Symfony 8.x.

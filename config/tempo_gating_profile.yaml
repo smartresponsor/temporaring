@@ -14,4 +14,6 @@ component:
     - tempo
   mutation_mode: allowed
   secret_scan: enabled
+  secret_scan_excluded_paths:
+    - python/.venv/**
   release:
