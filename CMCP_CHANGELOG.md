@@ -292,7 +292,7 @@
 - `composer lint:yaml`, `composer lint:container`, and `composer schema:parity`: PASS.
 - `npm test`: PASS; behavioral evidence functional 1/1, behavioral 1/1, UI 0/0, critical 1/1. No user-observable UI changed, so screenshots are not applicable.
 - `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, both canonical scientific smoke fixtures passed.
-- Post-mutation Inspecting was attempted twice through the standalone quality capability; both calls exceeded the connector execution window before returning a normalized report. Inspecting is therefore NOT_VERIFIED post-mutation; the pre-mutation PHP-structure report remains zero-findings evidence only for the prior fingerprint.
+- Post-mutation Inspecting was attempted repeatedly through the standalone quality capability. Two long invocations exceeded the connector window; a bounded 30-second probe returned `INSPECTING_FAILED` with no stdout/stderr. The earlier long invocation also removed the tracked `.gating/README.md` as a side effect; the file was restored byte-for-byte and a subsequent bounded Inspecting probe left the worktree clean. Inspecting source confirms analyzer-local timeouts (Semgrep 60s, PHPStan/Rector 300s), while the orchestration call can terminate earlier without analyzer diagnostics. This is an Inspecting execution-plane blocker, not a Temporaring deterministic-gate failure; post-mutation Inspecting remains NOT_VERIFIED.
 - Final Git inspection before commit: only `CMCP_CHANGELOG.md` is dirty; `.gating/README.md` is restored byte-for-byte to tracked canonical state. No origin/upstream is configured, so publication is unavailable without inventing remote state.
 
 
