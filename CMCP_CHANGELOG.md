@@ -263,3 +263,36 @@
 - No browser/mobile/UI implementation changed, so screenshot or visual-flow evidence is not applicable.
 - Composer/lock changes that pre-dated this execution window were reviewed and retained only where they form a coherent, tested RC dependency/tooling state; the incorrect pre-existing `.gating/README.md` replacement was repaired instead of committed.
 
+## 2026-09-29 — Canon052 consumer-artifact remediation
+
+### Baseline and evidence
+- Upstream CanonScanning Gating report was RED on the consumer `.gating/` topology; fresh Inspecting PHP-structure evidence contained zero findings, while Semgrep timed out and is not claimed as GREEN evidence.
+- Baseline local `master` HEAD was `89aa638349e7e14099eb6ee7fec9f3cc1ab08f44`, with no upstream configured. The only Git-visible dirty path was `.gating/README.md`, replaced by the Gating package README.
+- Required Objecting, Cruding, Viewing, and Interfacing runtime dependencies and local sibling path/symlink repositories are declared in the root Composer manifest.
+
+### Canonization mapping
+- Consulted Canon052 directly: consumer `.gating/` is artifact-only and must not contain copied Gating engine/policy/runtime trees.
+- Consulted Canon045 for root local repository closure and Canon036 for documentation producer ownership; neither requires an application-source change for this remediation.
+- Repository AGENTS remains authoritative for `App\\Temporaring\\`, Symfony 8/PHP 8.4, technical-role-first structure, and the prohibition on Domain/Port/Adapter/Adaptor trees.
+
+### Market and workstreams
+- Current reproducible-workflow practice represented by Nextflow, Snakemake, and DVC emphasizes reproducible execution, explicit versioned inputs/artifacts, and traceable lineage. Temporaring's scientific compute/control-plane separation remains directionally aligned.
+- RC-critical workstream: restore the deterministic Gating consumer boundary and acceptance gates.
+- Growth workstream: richer immutable run/environment fingerprints, portable provenance, and experiment lineage remain post-RC and do not block this Canon052 repair.
+
+### Material implementation
+- Preserved the entire contaminated `.gating/` tree non-destructively under `var/temporaring/2026-09-29/engine-20260930020513-temporaring-046d13/quarantine/gating-contamination/`.
+- Recreated `.gating/README.md` as the minimal non-executable artifact-boundary document. No reset, clean, delete, or runtime restart was used.
+
+### Verification
+- `composer validate --strict --check-lock`: PASS.
+- `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon052 contamination is no longer reported.
+- `composer cs:check`: PASS; `composer phpstan`: PASS with 0 errors.
+- `composer test`: PASS, 12 tests / 25 assertions; `composer test:coverage`: PASS with Canon040 evidence at 94.5% lines, 87.5% methods, 92.6% branches.
+- `composer lint:yaml`, `composer lint:container`, and `composer schema:parity`: PASS.
+- `npm test`: PASS; behavioral evidence functional 1/1, behavioral 1/1, UI 0/0, critical 1/1. No user-observable UI changed, so screenshots are not applicable.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, both canonical scientific smoke fixtures passed.
+- Post-mutation Inspecting was attempted twice through the standalone quality capability; both calls exceeded the connector execution window before returning a normalized report. Inspecting is therefore NOT_VERIFIED post-mutation; the pre-mutation PHP-structure report remains zero-findings evidence only for the prior fingerprint.
+- Final Git inspection before commit: only `CMCP_CHANGELOG.md` is dirty; `.gating/README.md` is restored byte-for-byte to tracked canonical state. No origin/upstream is configured, so publication is unavailable without inventing remote state.
+
+
