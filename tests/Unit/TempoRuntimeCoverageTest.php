@@ -56,7 +56,8 @@ final class TempoRuntimeCoverageTest extends TestCase
             PHP_OS_FAMILY === 'Windows' ? 'python.exe' : 'python',
         ]);
         $runner = new TempoPythonRunnerService($root, $python);
-        $result = $runner->run($root.'\\research\\hypothesis\\common-positive.json');
+        $fixture = implode(DIRECTORY_SEPARATOR, [$root, 'research', 'hypothesis', 'common-positive.json']);
+        $result = $runner->run($fixture);
         self::assertSame('pure_time_reparameterization', $result->classification());
         self::assertSame('falsified', $result->payload['status']);
     }
