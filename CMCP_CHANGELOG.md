@@ -398,4 +398,109 @@
 - No runtime, browser/mobile/UI, navigation, form, or user-flow surface changed; behavioral/runtime restart and visual screenshots are not applicable.
 - Final Git inspection before commit: `master` at `fbf9716f48b94b7d252a850bc5a3dd881db4ac99`, no remote/upstream, with exactly `.gitignore` and `CMCP_CHANGELOG.md` dirty from this pass.
 
+## 2026-10-03 — engine-20261004040600-temporaring-353aa5
+
+### Reconnaissance and evidence reconciliation
+- Resolved the authoritative workspace through Console MCP and established a clean `master` baseline at `10870a3bb57ecbe0f85f679422ff5028bc4f2ee8`, with no configured upstream or remote.
+- Re-read the task specification, target guidance, root README, development/production Composer manifests, current PHP runtime source, research provenance/reproducibility/roadmap contracts, and the existing orchestration journal.
+- Re-read the required Objecting, Cruding, Viewing, Interfacing, Canonization, and Gating contracts. The active target-to-canon mapping remains `App\\Temporaring\\`, role-first Symfony structure, no `src/Domain`, Port/Adapter/Adaptor taxonomy, no component-local generic CRUD, and consumer `.gating/` as artifact-only state.
+- Consulted authoritative Canon052 and its executable Gating mirror. The supplied 2026-09-29 Canon052 RED is historical for the current tree: `.gating/README.md` is a non-executable artifact-boundary document and current Gating no longer discovers copied engine/policy files there.
+- Reconciled the supplied Canon031 warning against current source: the previously listed command, DTO, kernel, runner service, and service-interface symbols now contain meaningful PHPDoc, so the warning is also historical for the current tree.
+
+### Market and workstreams
+- Compared current reproducibility/experiment practice represented by MLflow, DVC, Weights & Biases, and Nextflow. Explicit run metadata, versioned inputs/configuration, provenance, inspectable artifacts, reproducible execution, and portable workflow state remain the relevant maturity baseline.
+- RC-critical workstream remains deterministic PHP/Python execution, stable result/provenance contracts, canonical package/Gating integration, measurable tests, diagnostics, and reproducible acceptance evidence.
+- Growth remains separate from RC: persisted run registry/comparison UX, richer source/dependency/environment fingerprints, distributed scheduling, and broader System Tempo experiments.
+- No additional product-source mutation was justified in this pass: the historical RED/warning backlog is already remediated in the authoritative current tree, and speculative growth work is explicitly non-RC.
+
+### Fresh deterministic acceptance
+- `composer validate --strict --check-lock`: PASS.
+- `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon052 is GREEN and Canon040/Canon042 evidence remains above threshold.
+- `composer quality`: PASS; PHP-CS-Fixer found 0 fixable files, PHPStan reported 0 errors, PHPUnit passed 12 tests / 25 assertions, and the repository gate passed with 0 failures / 0 warnings.
+- Initial `npm test` start was deferred by Console MCP runtime-capacity policy (`ADMIT_LIGHT_ONLY`) before any process started; a later bounded `npm test` execution succeeded with PHPUnit 12 tests / 25 assertions, Playwright execution, and behavioral evidence functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- After the parallel portability run committed OS-aware virtualenv interpreter resolution, completed the remaining cross-platform test repair by replacing the Windows-only canonical fixture path with a `DIRECTORY_SEPARATOR`-based path.
+- Changed-PHP lint: PASS for `tests/Unit/TempoRuntimeCoverageTest.php`.
+- Post-repair `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan 0 errors, PHPUnit 12/25, repository gate 0 failures / 0 warnings.
+- Post-repair `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical System Tempo fixtures returned their expected result envelopes.
+- Fresh Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-043231.json`: GREEN for executed analyzers, PHPStan 0 errors and PHP-structure 0 findings; Semgrep was not part of this successful analyzer set and is not claimed GREEN.
+- No runtime, browser/mobile/UI, navigation, form, or user-flow code changed; runtime restart and visual screenshots are not applicable to this execution window.
+- The test source change is safe to integrate independently. `CMCP_CHANGELOG.md` is intentionally excluded from the signed source commit because it also contains uncommitted orchestration entries from concurrent Temporaring execution windows.
+
+## 2026-10-03 — engine-20261004041036-temporaring-977970
+
+### Reconnaissance and workstreams
+- Resolved the canonical `temporaring` workspace through Console MCP; baseline `master` HEAD is `10870a3bb57ecbe0f85f679422ff5028bc4f2ee8`, worktree clean, with no remote/upstream configured.
+- Re-read target guidance, README, Composer manifest, current PHP runtime/tests, supplied CanonScanning RED evidence, required Objecting/Cruding/Viewing/Interfacing contracts, Gating, and normative Canonization Canon031/Canon052 plus the guard matrix.
+- Reconciled the supplied 2026-09-29 Canon052 failure as historical evidence: the current tracked `.gating/` surface is artifact-only and prior fresh local gates recorded Canon052 GREEN; the historical report remains useful as provenance but is not accepted as current-state failure evidence.
+- Market/maturity baseline remains reproducible experiment/workflow practice: deterministic reruns, explicit environments, portable execution paths, provenance, and inspectable artifacts. RC-critical work is verification portability and deterministic PHP/Python execution; persisted run registry/comparison UX, distributed scheduling, richer lineage, and additional experiments remain growth work.
+- RC risk selected for this execution window: `TempoRuntimeCoverageTest` hard-codes the Windows-only `.venv\\Scripts\\python.exe` location, so the repository-owned PHP→Python integration gate cannot execute unchanged on Linux/Ubuntu despite the runtime boundary itself being portable.
+- Canon mapping: no Entity/system-field, generic CRUD, rendering, shell, API, or UI ownership change is introduced; `App\\Temporaring\\` role-first structure remains unchanged. Canon052 remains an executable acceptance gate, while this portability repair stays within Temporaring's own deterministic verification boundary.
+
+### Planned verification
+- Make the integration test resolve the repository-local virtualenv interpreter using the host directory separator and OS-specific venv executable layout without changing scientific behavior.
+- Run changed-PHP lint, Composer validation, PHPUnit/quality/Gating, the canonical Python verification script, npm behavioral evidence, and post-mutation Inspecting where the execution plane is available.
+
+### Implementation and verification
+- Updated `tests/Unit/TempoRuntimeCoverageTest.php` to resolve the repository-local virtualenv interpreter with `DIRECTORY_SEPARATOR` and the canonical Windows (`Scripts/python.exe`) versus Unix (`bin/python`) venv layouts. Scientific inputs, runner behavior, and result assertions are unchanged.
+- Changed-PHP lint: PASS for the modified integration test.
+- `composer validate --strict --check-lock`: PASS.
+- `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan 0 errors, PHPUnit 12 tests / 25 assertions, repository gate 10 rules with 0 failures / 0 warnings.
+- Full `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon052 remains GREEN on the current consumer topology.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical System Tempo smoke fixtures returned their expected result envelopes.
+- Post-mutation Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-042424.json`: GREEN for executed analyzers with PHPStan 0 errors and PHP-structure 0 findings. Semgrep was not part of this successful run and is not claimed GREEN.
+- `npm test` could not be started twice because the shared repository worker admitted light work only under `RESOURCE_PRESSURE_WATCH` / `ENGINE_BACKLOG_HIGH`; no npm process was launched. Existing Canon042 evidence remained GREEN in full Gating, but fresh behavioral evidence is therefore not claimed for this execution window.
+- No runtime/browser/mobile/UI code changed, so runtime restart and visual screenshots are not applicable to this patch.
+
+## 2026-10-03 — engine-20261004042755-temporaring-252a07
+
+### Reconnaissance and evidence reconciliation
+- Resolved the authoritative `D:\\PhpstormProjects\\www\\temporaring` workspace through Console MCP; baseline `master` HEAD is `cceefa083b0f5e78e0e710cc1c8b329a1211db7a`, with no configured remote/upstream and a pre-existing modification limited to `CMCP_CHANGELOG.md`.
+- Re-read target guidance/README/Composer manifests, current runtime/test surfaces, supplied 2026-09-29 CanonScanning Gating RED and Inspecting evidence, mandatory Objecting/Cruding/Viewing/Interfacing contracts, and Canonization/Gating owner contracts.
+- Consulted normative Canon031 and Canon052 directly plus the executable Canon052 Gating mirror. Current target mapping remains `App\\Temporaring\\`, role-first Symfony structure, no `src/Domain`, Port/Adapter/Adaptor taxonomy, no component-local generic CRUD, and consumer `.gating/` as artifact-only state.
+- The historical Canon052 RED is not reproducible on the current tree: `.gating/README.md` is the sole non-generated boundary document and current Gating reports Canon052 GREEN. The historical Canon031 warning is likewise remediated: all previously identified class/contract symbols now carry meaningful PHPDoc.
+- The current runtime integration test resolves the repository-local Python venv portably via `DIRECTORY_SEPARATOR` and Windows `Scripts/python.exe` versus Unix `bin/python`, preserving scientific behavior while making the PHP→Python acceptance path Ubuntu-compatible.
+
+### Market and workstreams
+- Mature experiment/workflow systems converge on explicit run inputs/configuration, reproducible environments, provenance, inspectable artifacts, deterministic reruns, and portable execution paths. Temporaring already aligns through its PHP control plane / Python compute plane / research specification / generated-artifact split.
+- RC-critical work remains deterministic execution, validated result/provenance contracts, canonical package/Gating integration, portable verification, tests, diagnostics, and reproducible acceptance evidence.
+- Growth remains post-RC: persisted run registry/comparison UX, richer code/data/environment lineage, distributed scheduling, and broader System Tempo experiments; none is required for current correctness or operability.
+
+### Fresh acceptance
+- `composer validate --strict --check-lock`: PASS.
+- `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon040 remains 94.5% lines / 87.5% methods / 92.6% branches, Canon042 remains functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan 0 errors, PHPUnit 12 tests / 25 assertions, repository gate 10 rules with 0 failures / 0 warnings.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, both canonical System Tempo smoke fixtures returned expected result envelopes.
+- `npm test`: PASS; PHPUnit + Playwright path + behavioral evidence producer completed, with the explicit empty UI denominator preserved.
+- Fresh Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-043439.json`: GREEN for executed analyzers, PHPStan 0 errors and PHP-structure 0 findings.
+- No browser/mobile/UI implementation changed in this execution window; runtime restart and visual screenshots are not applicable.
+- No additional product-source mutation is justified: the supplied RED/warning backlog is already closed on the current authoritative tree and all applicable acceptance gates are GREEN.
+
+## 2026-10-03 — engine-20261004044615-temporaring-680b27
+
+### Reconnaissance and canon mapping
+- Resolved the authoritative workspace through Console MCP; baseline `master` HEAD is `cf412b46adba27f88c6cf5155a578816797728a3`, with no configured remote/upstream and a pre-existing modification limited to `CMCP_CHANGELOG.md`.
+- Read the authoritative task specification and supplied CanonScanning evidence, target AGENTS/README/Composer/Gating/runtime/test/research surfaces, and required Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contracts.
+- Consulted normative Canon031 and Canon052 directly. The supplied 2026-09-29 findings are historical for the current tree: meaningful PHPDoc is present on the previously weak symbols and the consumer `.gating/` executable contamination is absent.
+- Target mapping remains canonical Symfony: `App\\Temporaring\\`, technical-role-first source tree, no `src/Domain`, Port/Adapter/Adaptor taxonomy, no component-local generic CRUD, and application dependencies declared through Composer with development path/symlink wiring.
+
+### Market and workstreams
+- Mature experiment/workflow platforms converge on explicit immutable inputs/configuration, reproducible environments, provenance, inspectable artifacts, deterministic reruns, and portable execution paths.
+- RC-critical workstream remains deterministic PHP/Python execution, result/provenance contracts, canonical package/Gating integration, portable verification, tests, diagnostics, and reproducible acceptance evidence.
+- Growth remains separate: persisted run registry/comparison UX, richer code/data/environment lineage, distributed scheduling, and broader System Tempo experiments.
+- No speculative product-source change is justified while the historical remediation backlog does not reproduce and the current acceptance contour is GREEN.
+
+### Fresh deterministic acceptance
+- `composer validate --strict --check-lock`: PASS.
+- `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon052 is GREEN and the current PHPDoc debt no longer reproduces.
+- `composer quality`: PASS; PHP-CS-Fixer clean, PHPStan 0 errors, PHPUnit 12 tests / 25 assertions, repository gate 10 rules with 0 failures / 0 warnings.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical System Tempo smoke fixtures returned expected result envelopes.
+- `npm test`: PASS; PHPUnit + Playwright execution + behavioral evidence producer completed, with functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- No browser/mobile/UI implementation changed; runtime restart and visual screenshots are not applicable to this execution window.
+
+### Integration tail
+- The only repository mutation in this execution window is this required orchestration-journal entry; no product/source repair was warranted by current evidence.
+- Fresh Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-045034.json`: GREEN for executed analyzers; PHPStan 0 errors and PHP-structure 0 findings. Semgrep was not part of this run and is not claimed GREEN.
+- Final Git status and coherent journal commit are the remaining integration checks before closure.
+
 
