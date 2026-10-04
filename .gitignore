@@ -9,7 +9,7 @@
 /python/**/*.egg-info/
 /config/reference.php
 
-# Gating consumer surface: keep repository policy/profile, ignore vendored runtime snapshots.
+# Gating consumer surface: artifact-only; executable policy and runtime come from gating/gate.
 /.gating/*
 !/.gating/README.md
 /artifacts/*

@@ -371,4 +371,31 @@
 - No browser/mobile/UI implementation changed, so screenshot/visual-flow evidence is not applicable to this execution window.
 - Final Git diff/status and coherent signed commit remain as the integration tail; no remote/upstream was configured at baseline, so publication must not be invented.
 
+## 2026-10-03 — engine-20261004035416-temporaring-4fb0d4
+
+### Reconnaissance and canon mapping
+- Re-read the authoritative task specification, target AGENTS/README/Composer manifests, current CanonScanning RED evidence, the tracked `.gating/README.md`, and the existing orchestration journal.
+- Read authoritative Canon052 directly from `Canonization/.canonization/Governance/Architecture/Rule/Canon052GatingIntegrationRule.md`; consumer `.gating/` is artifact-only and executable policy/runtime belongs to `gating/gate`.
+- Verified the mandatory application dependency contour is declared in development Composer with local path/symlink wiring for Objecting, Cruding, Viewing, and Interfacing and in the production manifest as packaged dependencies.
+- Re-read the Objecting root contracts. The current task has no Entity/system-field surface, generic CRUD ownership, presentation, shell, or navigation change.
+- The supplied 2026-09-29 Canon052 RED report is historical for the current tree: current `.gating/README.md` is a non-executable artifact-boundary document and the previous execution journal records fresh GREEN Gating after non-destructive contamination quarantine.
+
+### Market and workstreams
+- Mature reproducible-research/workflow platforms converge on explicit inputs/configuration, provenance, deterministic reruns, inspectable artifacts, and separation of generated evidence from executable policy; Temporaring's PHP control plane / Python compute plane / research specification split remains aligned with that baseline.
+- RC-critical workstream: keep the consumer Gating boundary deterministic and self-describing, with canonical Composer/Gating entrypoints and no copied executable policy under `.gating/`.
+- Growth workstream remains post-RC: persisted run registry/comparison UX, richer lineage/environment fingerprints, distributed scheduling, and broader System Tempo experiments.
+
+### Material implementation
+- Corrected the `.gitignore` Gating comment so repository-local guidance now matches Canon052 exactly: `.gating/` is artifact-only and executable policy/runtime come from the installed `gating/gate` package.
+- No runtime, scientific model, API, UI, database, or browser behavior was changed.
+
+### Verification and integration
+- `composer validate --strict --check-lock`: PASS.
+- `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; Canon052 is GREEN on the current tree.
+- Changed-PHP lint applicability check found 0 changed PHP files; this pass changes documentation/control metadata only.
+- `composer quality`: PASS; PHP-CS-Fixer found 0 fixable files, PHPStan reported 0 errors, PHPUnit passed 12 tests / 25 assertions, and the repository gate passed with 0 failures / 0 warnings.
+- Post-mutation Inspecting was attempted after the repository change, but its Console MCP execution capability resolved against `/srv/console-workspace` and rejected the canonical Windows workspace as outside allowed roots. This is an Inspecting execution-plane blocker; post-mutation Inspecting remains NOT_VERIFIED.
+- No runtime, browser/mobile/UI, navigation, form, or user-flow surface changed; behavioral/runtime restart and visual screenshots are not applicable.
+- Final Git inspection before commit: `master` at `fbf9716f48b94b7d252a850bc5a3dd881db4ac99`, no remote/upstream, with exactly `.gitignore` and `CMCP_CHANGELOG.md` dirty from this pass.
+
 
