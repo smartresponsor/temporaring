@@ -15,6 +15,9 @@ use Symfony\Component\Console\Output\OutputInterface;
     name: 'tempo:hypothesis:run',
     description: 'Classify one System Tempo hypothesis through the deterministic Python compute plane.',
 )]
+/**
+ * Runs one immutable System Tempo hypothesis through the deterministic compute boundary.
+ */
 final class TempoHypothesisRunCommand extends Command
 {
     public function __construct(
@@ -23,11 +26,17 @@ final class TempoHypothesisRunCommand extends Command
         parent::__construct();
     }
 
+    /**
+     * Declares the hypothesis specification path required by the command contract.
+     */
     protected function configure(): void
     {
         $this->addArgument('hypothesis', InputArgument::REQUIRED, 'Path to a hypothesis JSON specification.');
     }
 
+    /**
+     * Executes classification and emits the deterministic raw result envelope unchanged.
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $path = $input->getArgument('hypothesis');

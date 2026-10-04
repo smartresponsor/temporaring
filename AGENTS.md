@@ -11,3 +11,8 @@ Follow the platform Canonization and Gating repositories as the authoritative ar
 - Component-owned YAML filenames use the `tempo_` prefix unless they are framework/vendor bootstrap files.
 - Keep Python scientific execution isolated under `python/` and deterministic at the PHP/Python boundary.
 - Generated research evidence belongs under `artifacts/` and must not be treated as source code.
+## Platform Canon Precedence
+
+For work under `D:\PhpstormProjects\www`, authoritative platform rules live in the Canonization repository. Gating is the executable mirror for objectively guardable rules. This `AGENTS.md` is an agent-facing projection or local supplement and must not override or contradict Canonization.
+
+If a local instruction conflicts with current Canonization, follow Canonization and synchronize this file. Local instructions may narrow scope or add repository-specific constraints only when they remain compatible with Canonization.

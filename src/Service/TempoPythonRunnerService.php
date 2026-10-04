@@ -8,6 +8,9 @@ use App\Temporaring\DTO\TempoRunResultDTO;
 use App\Temporaring\ServiceInterface\TempoPythonRunnerServiceInterface;
 use Symfony\Component\Process\Process;
 
+/**
+ * Executes the isolated Python classifier and validates its result at the PHP boundary.
+ */
 final readonly class TempoPythonRunnerService implements TempoPythonRunnerServiceInterface
 {
     public function __construct(
@@ -16,6 +19,9 @@ final readonly class TempoPythonRunnerService implements TempoPythonRunnerServic
     ) {
     }
 
+    /**
+     * Runs one hypothesis file and returns a validated immutable scientific result envelope.
+     */
     public function run(string $hypothesisPath): TempoRunResultDTO
     {
         $resolvedPath = realpath($hypothesisPath);

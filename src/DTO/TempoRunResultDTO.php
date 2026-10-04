@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Temporaring\DTO;
 
+/**
+ * Validates and exposes the stable result envelope returned by the Python compute plane.
+ */
 final readonly class TempoRunResultDTO
 {
     /** @param array<string, mixed> $payload */
@@ -45,6 +48,9 @@ final readonly class TempoRunResultDTO
         }
     }
 
+    /**
+     * Returns the validated scientific classification from the immutable result payload.
+     */
     public function classification(): string
     {
         return $this->requireNonEmptyString('classification');

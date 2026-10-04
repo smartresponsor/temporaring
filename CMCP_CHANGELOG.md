@@ -295,4 +295,34 @@
 - Post-mutation Inspecting was attempted repeatedly through the standalone quality capability. Two long invocations exceeded the connector window; a bounded 30-second probe returned `INSPECTING_FAILED` with no stdout/stderr. The earlier long invocation also removed the tracked `.gating/README.md` as a side effect; the file was restored byte-for-byte and a subsequent bounded Inspecting probe left the worktree clean. Inspecting source confirms analyzer-local timeouts (Semgrep 60s, PHPStan/Rector 300s), while the orchestration call can terminate earlier without analyzer diagnostics. This is an Inspecting execution-plane blocker, not a Temporaring deterministic-gate failure; post-mutation Inspecting remains NOT_VERIFIED.
 - Final Git inspection before commit: only `CMCP_CHANGELOG.md` is dirty; `.gating/README.md` is restored byte-for-byte to tracked canonical state. No origin/upstream is configured, so publication is unavailable without inventing remote state.
 
+## 2026-10-03 — engine-20261003235424-temporaring-7e4996
+
+### Baseline and canon mapping
+- Re-read the authoritative task specification, repository guidance, current Composer/runtime source, research entrypoint, supplied CanonScanning reports, required Objecting/Cruding/Viewing/Interfacing contracts, Gating, and Canonization.
+- Fresh upstream fingerprint `46d2ab90724b68c772305e6f6562cf1630e903e6cd62f1ceddf5ad9233125fc1`: Inspecting reports zero PHP-structure findings; Semgrep timed out and is not claimed GREEN. Gating is RED only on Canon052; Canon031 is a warning.
+- Consulted normative Canon052 and Canon031. Canon052 requires consumer `.gating/` to be artifact-only while the installed `gating/gate` package owns executable policy/runtime. Canon031 requires >=70% meaningful class and contract-method PHPDoc coverage independently.
+- Target-to-canon mapping remains Symfony-oriented: `App\\Temporaring\\`, role-first `Command`, `DTO`, `Service`, `ServiceInterface`, no `src/Domain`, Port/Adapter/Adaptor taxonomy, no component-local generic CRUD, and no local Objecting system-field or UI ownership.
+
+### Market and workstreams
+- Compared current experiment/reproducibility practice represented by MLflow, Sacred, DVC, and Snakemake: run metadata/configuration, provenance/artifacts, reproducible pipelines, and portable reporting are mature expectations.
+- RC-critical workstream stays bounded to deterministic PHP/Python execution, provenance/result contracts, canonical packaging/Gating, documentation quality, tests, and diagnostics.
+- Growth workstream remains separate: persisted experiment/run registry, comparisons/dashboard UX, distributed workflow scheduling, cache orchestration, richer portable reports, and additional scientific capability.
+
+### Material implementation
+- Preserved the complete contaminated consumer `.gating/` tree non-destructively at `var/temporaring/2026-10-03/engine-20261003235424-temporaring-7e4996/gating-contamination/` and recreated the tracked artifact-only `.gating/README.md`; no delete/reset/clean/stash operation was used.
+- Added meaningful documentation for the exact Canon031 weak symbols in the command, result DTO, kernel, runner service, and service interface without changing behavior.
+- Preserved the pre-existing `AGENTS.md` Canonization-precedence change as coherent in-scope guidance pending final Git reconciliation.
+
+### Verification and acceptance
+- `composer validate --strict --check-lock`: PASS.
+- Initial post-mutation `composer gating`: 0 failures; Canon040 and Canon042 were stale-evidence warnings only. Regenerated PHPUnit and behavioral evidence, then re-ran Gating: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; coverage is 94.5% lines / 87.5% methods / 92.6% branches and behavioral evidence is functional 1/1, behavioral 1/1, UI 0/0, critical 1/1.
+- `composer gate`: PASS, 10 rules, 0 failures, 0 warnings, 2 intentional skips; secret scan passed over 77 source files.
+- `composer quality`: PASS; PHP-CS-Fixer reports no fixable files, PHPStan 0 errors, PHPUnit 12 tests / 25 assertions, repository gate GREEN.
+- `composer lint:php`, `composer lint:yaml`, `composer lint:container`, and `composer schema:parity`: PASS.
+- `bin/check-python.ps1`: PASS; Pyright 0 errors/warnings/informations, pytest 17/17, and both canonical System Tempo smoke fixtures returned their expected result envelopes.
+- Composer audit and npm audit at high severity: PASS, no vulnerability advisories/findings.
+- Fresh post-mutation Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-000617.json`: GREEN for executed analyzers, PHPStan 0 errors and PHP-structure 0 findings. Semgrep was not part of this successful run and is not claimed GREEN.
+- No browser/mobile/UI implementation changed. Existing behavioral test tooling executed through `npm test`; visual screenshots are not applicable to this remediation.
+- Post-verification worktree contains only the pre-existing `AGENTS.md` change plus this run's journal and five PHPDoc-only source changes; verifier-generated evidence remains under ignored `var/` surfaces.
+
 
