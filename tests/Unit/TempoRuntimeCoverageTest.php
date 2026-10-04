@@ -48,7 +48,13 @@ final class TempoRuntimeCoverageTest extends TestCase
     public function testRunnerExecutesCanonicalFixture(): void
     {
         $root = dirname(__DIR__, 2);
-        $python = $root.'\\python\\.venv\\Scripts\\python.exe';
+        $python = implode(DIRECTORY_SEPARATOR, [
+            $root,
+            'python',
+            '.venv',
+            PHP_OS_FAMILY === 'Windows' ? 'Scripts' : 'bin',
+            PHP_OS_FAMILY === 'Windows' ? 'python.exe' : 'python',
+        ]);
         $runner = new TempoPythonRunnerService($root, $python);
         $result = $runner->run($root.'\\research\\hypothesis\\common-positive.json');
         self::assertSame('pure_time_reparameterization', $result->classification());
