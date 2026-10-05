@@ -503,4 +503,16 @@
 - Fresh Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261004-045034.json`: GREEN for executed analyzers; PHPStan 0 errors and PHP-structure 0 findings. Semgrep was not part of this run and is not claimed GREEN.
 - Final Git status and coherent journal commit are the remaining integration checks before closure.
 
+## 2026-10-05 — engine-20261004040053-temporaring-38c4df follow-up verification
+
+### Routing recovery and final acceptance
+- Rechecked the authoritative Windows workspace `D:\\PhpstormProjects\\www\\temporaring` after the earlier Console MCP routing drift; repository capabilities now consistently resolve the Windows workspace.
+- Baseline at follow-up: clean `master` at `4a7623dad54b91ec47f16d9ea3cc28bbf1d977f7`, tracking `origin/master` with ahead 0 / behind 0.
+- Fresh `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips; historical Canon052 RED remains non-reproducible.
+- Aggregate `composer quality` hit an MCP-side HTTP 502 before a repository result was returned, so its deterministic constituents were executed separately rather than treating transport failure as product failure.
+- `composer cs:check`: PASS, 0 fixable files; `composer phpstan`: PASS, 0 errors; `composer test`: PASS, 12 tests / 25 assertions; `composer gate`: PASS, 10 rules, 0 failures, 0 warnings, 2 intentional skips, secret scan GREEN over 77 files.
+- Fresh Inspecting report `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261005-205546.json`: GREEN for executed analyzers, PHPStan 0 errors and PHP-structure 0 findings. Semgrep was not part of this analyzer set and is not claimed GREEN.
+- No runtime/browser/mobile/UI source changed in this task or follow-up. Runtime restart and visual screenshots are not applicable; the repository's explicit UI denominator remains 0/0.
+- No additional product-source remediation is justified: the supplied historical RED backlog is closed on the current authoritative tree and current deterministic acceptance is GREEN.
+
 
