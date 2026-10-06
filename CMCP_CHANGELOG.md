@@ -398,6 +398,21 @@
 - No runtime, browser/mobile/UI, navigation, form, or user-flow surface changed; behavioral/runtime restart and visual screenshots are not applicable.
 - Final Git inspection before commit: `master` at `fbf9716f48b94b7d252a850bc5a3dd881db4ac99`, no remote/upstream, with exactly `.gitignore` and `CMCP_CHANGELOG.md` dirty from this pass.
 
+## 2026-10-05 — engine-20261004040053-temporaring-38c4df follow-up verification
+
+### Verification closure
+- Re-opened the canonical Windows workspace `D:\\PhpstormProjects\\www\\temporaring` through Windows Console MCP after the prior routing issue.
+- Git baseline at follow-up: `master` at `4a7623dad54b91ec47f16d9ea3cc28bbf1d977f7`, clean, tracking `origin/master`, ahead 0 / behind 0.
+- Fresh `composer gating`: PASS, 36 rules, 0 failures, 0 warnings, 4 intentional skips.
+- Fresh `composer cs:check`: PASS, 0 fixable files.
+- Fresh `composer phpstan`: PASS, 0 errors.
+- Fresh `composer test`: PASS, 12 tests / 25 assertions.
+- Fresh `composer gate`: PASS, 10 rules, 0 failures, 0 warnings, 2 intentional skips; secret scan passed over 77 files.
+- The aggregate `composer quality` wrapper returned an MCP 502 during this follow-up, but every constituent quality gate was executed independently and passed, so no repository failure is attributed to that transport error.
+- No runtime, API, browser/mobile/UI, navigation, forms, or user-flow code changed; screenshots remain not applicable.
+- Standalone Inspecting follow-up: PASS via `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-temporaring-20261006-012826.json`; executed analyzers were PHPStan and PHP-structure, with PHPStan 0 errors and 0 findings overall. Semgrep was not part of this successful analyzer set and is not claimed GREEN.
+
+
 ## 2026-10-03 — engine-20261004040600-temporaring-353aa5
 
 ### Reconnaissance and evidence reconciliation
